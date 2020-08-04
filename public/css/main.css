@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+/* --------------- Général --------------- */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  width: 100%;
+  min-height: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+/* --------------- Topbar & navigation --------------- */
+
+#topbar {
+  height: 40px;
+  background-color: #1995e0;
+  position: fixed;
+  width: 100%;
+  display: block;
+  z-index: 2;
+}
+
+#topbar nav {
+  top: 3px;
+  position: relative;
+}
+
+#topbar nav a {
+  color: #fff;
+  padding: 6px;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  font-family: 'josefin_sansbold', sans-serif;
+}
+
+#topbar nav a:hover {
+  color: #1995e0;
+}
+
+#topbar nav ul {
+  margin: 0;
+  padding: 0;
+  float: right;
+  list-style: none;
+}
+
+#topbar nav li {
+  float: left;
+  margin-right: 25px;
+}
+
+#topbar nav li:last-child {
+  margin-right: 100px;
+}
+
+/* --------------- Catégorie --------------- */
+
+.categorie {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  clear: both;
+}
+
+.categorie a {
+  color: black;
+  padding: 6px;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  font-family: 'josefin_sansbold', sans-serif;
+}
+
+.categorie a:hover {
+  color: #ffffff;
+  padding: 10px;
+  background-color: #1995e0;
+  border-radius: 20px;
+}
+
+.categorie ul {
+  margin: 0;
+  padding: 0;
+}
+
+.categorie li {
+  float: left;
+  margin: 40px 20px 40px 50px;
+}
+
+.categorie li:first-child {
+  margin-left: 20px;
+}
+
+/* --------------- Add form --------------- */
+
+.form-add {
+  max-width: 500px;
+  padding: 10px 20px;
+  margin: 20px auto;
+  background-color: #b3e8ca;
+  border-radius: 8px;
+}
+
+fieldset {
+  border: none;
+}
+
+.form-add label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.form-add input[type="text"] {
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  padding: 10px;
+  width: 100%;
+  color: #8a97a0;
+  margin-bottom: 30px;
+}
+
+.form-add input[type="text"]:focus {
+  background: #d2d9dd;
+}
+
+.form-add input[type="submit"] {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  padding: 10px 30px 10px 30px;
+  color: #FFF;
+  background: #1abc9c;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  width: 100%;
+  border: 1px solid #16a085;
+  margin-bottom: 10px;
+}
+
+.form-add input[type="submit"]:hover {
+  cursor: pointer;
+  background: #109177;
+}
+
