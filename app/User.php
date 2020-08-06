@@ -2,13 +2,10 @@
 
 namespace App;
 
-//use App\Models\Subscription;
 use App\Models\Subscriptions;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Support\Facades\Auth;
-use App\Models\Role;
 
 class User extends Authenticatable
 {
@@ -53,10 +50,10 @@ class User extends Authenticatable
 
     public $timestamps = false;
 
-    public function setPasswordAttribute($password)
-    {
-        $this->attributes['password'] = bcrypt($password);
-    }
+//    public function setPasswordAttribute($password)
+//    {
+//        $this->attributes['password'] = bcrypt($password);
+//    }
     public function subscription() {
         return $this->hasMany(Subscriptions::class);
     }

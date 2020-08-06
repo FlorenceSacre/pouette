@@ -104,7 +104,7 @@ body {
   max-width: 500px;
   padding: 10px 20px;
   margin: 20px auto;
-  background-color: #b3e8ca;
+  background-color: #1995e0;
   border-radius: 8px;
 }
 
@@ -149,26 +149,83 @@ body {
 .form-add input[type="submit"] {
   position: relative;
   display: block;
-  margin-top: 10px;
+  margin-top: 22px;
   padding: 10px 30px 10px 30px;
   color: #FFF;
-  background: #1abc9c;
+  background: #234CA5;
   font-size: 18px;
   text-align: center;
   font-style: normal;
   width: 100%;
-  border: 1px solid #16a085;
+  border: 1px solid #234CA5;
   margin-bottom: 10px;
 }
 
 .form-add input[type="submit"]:hover {
   cursor: pointer;
-  background: #109177;
+  background: #132959;
 }
 
 /* --------------- Subscribe --------------- */
 
 form #subscription {
   max-width: 500px;
+  padding: 10px 20px;
+  margin: 20px auto;
+  background-color: #457DBB;
+  border-radius: 8px;
+}
+
+form #subscription label {
+  display: block;
+  margin-bottom: 8px;
+  margin-top: 5px;
+}
+
+form #subscription input[type="radio"] {
+  position: relative;
+  top: -26px;
+}
+
+form #subscription input[type="radio"]:focus {
+  background: #d2d9dd;
+}
+
+form #subscription #amount {
+  position: relative;
+  margin-top: 10px;
+  margin-left: 28px;
+}
+
+form #subscription input[type="text"],
+form #subscription input[type="email"],
+form #subscription input[type="password"] {
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  padding: 10px;
+  width: 100%;
+  color: #8a97a0;
+  margin-bottom: 20px;
+}
+
+form #subscription input[type="submit"] {
+  position: relative;
+  display: block;
+  margin-top: 22px;
+  padding: 10px 30px 10px 30px;
+  color: #FFF;
+  background: #234CA5;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  width: 100%;
+  border: 1px solid #234CA5;
+  margin-bottom: 10px;
+}
+
+form #subscription input[type="submit"]:hover {
+  cursor: pointer;
+  background: #1995e0;
 }
 
