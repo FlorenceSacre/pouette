@@ -21,52 +21,53 @@
                     <span>12€/mois</span>
                 </label>
                 <input type="radio" name="amount" value="12" id="12" required {{old('amount') === '12' ? 'checked' : ''}} />
-            <div class="form-row">
-                <label for="card-element">
-                    Carte bancaire
-                </label>
-                <div id="card-element">
-                    <!-- A Stripe Element will be inserted here. -->
-                </div>
-                    <!-- Used to display Element errors. -->
-                <div id="card-errors" role="alert"></div>
-                <div>
-                    <div>
-                        <label for="name">Nom</label>
-                        <input type="text" name="name" value="{{old('name')}}" placeholder="Nom prénom">
+                <div class="form-row">
+                    <label for="card-element">
+                        Carte bancaire
+                    </label>
+                    <div id="card-element">
+                        <!-- A Stripe Element will be inserted here. -->
                     </div>
+                        <!-- Used to display Element errors. -->
+                    <div id="card-errors" role="alert"></div>
                     <div>
-                        <label for="street">Adresse de facturation</label>
-                        <input type="text" name="street" id="street" value="{{old('street')}}" placeholder="42 rue de la Comté" />
-                    </div>
-                    <div>
-                        <label for="postcode">Code postal</label>
-                        <input type="text" name="postcode" id="postcode" value="{{old('postcode')}}" placeholder="5000" />
-                    </div>
-                    <div>
-                        <label for="city">Ville</label>
-                        <input type="text" name="city" id="city" value="{{old('city')}}" placeholder="Namur" />
-                    </div>
-                    <div>
-                        <label for="country">Country</label>
-                        <input type="text" name="country" id="country" value="{{old('country')}}" placeholder="Belgique" />
-                    </div>
+                        <div>
+                            <label for="name">Nom</label>
+                            <input type="text" name="name" value="{{old('name')}}" placeholder="Nom prénom">
+                        </div>
+                        <div>
+                            <label for="street">Adresse de facturation</label>
+                            <input type="text" name="street" id="street" value="{{old('street')}}" placeholder="42 rue de la Comté" />
+                        </div>
+                        <div>
+                            <label for="postcode">Code postal</label>
+                            <input type="text" name="postcode" id="postcode" value="{{old('postcode')}}" placeholder="5000" />
+                        </div>
+                        <div>
+                            <label for="city">Ville</label>
+                            <input type="text" name="city" id="city" value="{{old('city')}}" placeholder="Namur" />
+                        </div>
+                        <div>
+                            <label for="country">Pays</label>
+                            <input type="text" name="country" id="country" value="{{old('country')}}" placeholder="Belgique" />
+                        </div>
 
-                    <div>
-                        <label for="email">Email</label>
-                        <input type="email" name="email" value="{{old('email')}}" placeholder="exemple@exemple.org">
-                    </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="email" name="email" value="{{old('email')}}" placeholder="exemple@exemple.org">
+                        </div>
 
-                    <div>
-                        <label for="password">Mot de passe</label>
-                        <input type="password" name="password" value="{{old('password')}}">
-                    </div>
-                    <div>
-                        {{--<p>Annulable à tout moment en un clic</p>--}}
+                        <div>
+                            <label for="password">Mot de passe</label>
+                            <input type="password" name="password" value="{{old('password')}}">
+                        </div>
+                        <div>
+                            {{--<p>Annulable à tout moment en un clic</p>--}}
+                        </div>
                     </div>
                 </div>
             </div>
-            <button>Submit Payment</button>
+            <button>S'abonner</button>
         </form>
     </div>
 

@@ -29,39 +29,44 @@ class SubscriptionController extends Controller
             'name' => request('name'),
             'email' => request('email'),
         ]);
-//        $peut = request('email');
-//        dd($peut);
-//        $pouette = DB::table('users')->where('email',$peut);
-//        dd($pouette);
-//         if(!isset($pouette)) {
-        if (request('amount') == '5') {
-            $role = 'customer';
-        } else {
-            $role = 'subscriber';
+
+        $users = '';
+        $email_form = request('email');
+        $verif_email = DB::table('users')->where('email',$email_form)->first();
+        if(!isset($verif_email)) {
+            if (request('amount') == '5') {
+                $role = 'customer';
+            } else {
+                $role = 'subscriber';
+            }
+            $users = User::create([
+                'name' => request('name'),
+                'street' => request('street'),
+                'postcode' => request('postcode'),
+                'city' => request('city'),
+                'country' => request('country'),
+                'email' => request('email'),
+                'password' => request(bcrypt('password')),
+                'role' => $role,
+                'remember_token' => request('stripeToken'),
+            ]);
         }
-        User::create([
-            'name' => request('name'),
-            'street' => request('street'),
-            'postcode' => request('postcode'),
-            'city' => request('city'),
-            'country' => request('country'),
-            'email' => request('email'),
-            'password' => request(bcrypt('password')),
-            'role' => $role,
-            'remember_token' => request('stripeToken'),
-        ]);
-        //}
 
         \Stripe\Subscription::create([
             'customer' => $customer->id,
             'items' => [['plan' => request('amount')]],
         ]);
 
+        if(!isset($verif_email)) {
+            $idusers = $users->id;
+        } else {
+            $idusers = $verif_email->id;
+        }
         $subscription = Subscriptions::create([
             'stripe_id' => $customer->id,
             'amount' => request('amount'),
             'unsubscription_token' => Str::random(),
-            //'users_id' => $users->id,
+            'users_id' => $idusers,
         ]);
 
         $subscription->sendMeAnEmail();

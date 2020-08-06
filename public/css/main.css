@@ -108,13 +108,24 @@ body {
   border-radius: 8px;
 }
 
-fieldset {
+.form-add fieldset {
   border: none;
 }
 
 .form-add label {
   display: block;
   margin-bottom: 8px;
+  margin-top: 5px;
+}
+
+.form-add #categorie {
+  position: relative;
+  margin-top: 10px;
+  margin-left: 28px;
+}
+
+.form-add #image {
+  margin-top: 10px;
 }
 
 .form-add input[type="text"] {
@@ -127,7 +138,11 @@ fieldset {
   margin-bottom: 30px;
 }
 
-.form-add input[type="text"]:focus {
+.form-add input[type="checkbox"] {
+  position: absolute;
+}
+
+.form-add input[type="checkbox"]:focus {
   background: #d2d9dd;
 }
 
@@ -149,5 +164,11 @@ fieldset {
 .form-add input[type="submit"]:hover {
   cursor: pointer;
   background: #109177;
+}
+
+/* --------------- Subscribe --------------- */
+
+form #subscription {
+  max-width: 500px;
 }
 
