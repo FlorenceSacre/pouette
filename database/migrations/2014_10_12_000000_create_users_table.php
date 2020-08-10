@@ -19,13 +19,20 @@ class CreateUsersTable extends Migration
             $table->string('street');
             $table->string('postcode');
             $table->string('city');
-            $table->string('country');
             $table->string('email')->unique();
             $table->string('password');
             $table->boolean('admin')->default(0);
             $table->enum('role',['customer', 'subscriber']);
             $table->rememberToken();
             $table->timestamps(); //create_at et update_at
+
+            $table->bigInteger('country_id')
+                ->unsigned()
+                ->index();
+            $table->bigInteger('comments_id')
+                ->unsigned()
+                ->index()
+                ->nullable();
         });
     }
 

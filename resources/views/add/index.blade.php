@@ -34,7 +34,7 @@
                 <label for="image">Ajouter une image miniature</label>
                 <input type="file" name="image" id="image" />
             </div>
-            <input type="submit" value="envoyer" />
+            <input type="submit" value="Envoyer" />
         </div>
     </form>
 @endsection

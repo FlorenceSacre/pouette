@@ -6,6 +6,8 @@
         {{csrf_field()}}
         <input type="hidden" name="stripeToken" id="stripeToken" />
         <div id="subscription">
+            <fieldset>
+                <legend>Choisi ton abonnement</legend>
             <label for="5" id="amount">
                 <span>5€/mois</span>
             </label>
@@ -16,7 +18,7 @@
             <input type="radio" name="amount" value="12" id="12" required {{old('amount') === '12' ? 'checked' : ''}} />
             <div class="form-row">
                 <label for="card-element">
-                    <p>Carte bancaire</p>
+                    Carte bancaire
                 </label>
                 <div id="card-element">
                     <!-- A Stripe Element will be inserted here. -->
@@ -42,21 +44,27 @@
                     </div>
                     <div>
                         <label for="country">Pays</label>
-                        <input type="text" name="country" id="country" value="{{old('country')}}" placeholder="Belgique" />
+                        <select name="country" id="country">
+                            <option value="1">Belgique</option>
+                            <option value="2">Italie</option>
+                            <option value="3">Espagne</option>
+                            <option value="4">Portugal</option>
+                        </select>
                     </div>
                     <div>
                         <label for="email">Email</label>
                         <input type="email" name="email" value="{{old('email')}}" placeholder="exemple@exemple.org" />
                     </div>
                     <div>
-                        <label for="password">Mot de passe</label>
-                        <input type="password" name="password" />
+                        <label for="password">Password</label>
+                        <input type="password" name="password" value="{{old('password')}}" placeholder="" />
                     </div>
                     <div>
                         {{--<p>Annulable à tout moment en un clic</p>--}}
                     </div>
                 </div>
             </div>
+            </fieldset>
             <input type="submit" value="S'abonner" />
         </div>
     </form>

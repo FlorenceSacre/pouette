@@ -3,6 +3,8 @@
 namespace App;
 
 use App\Models\Subscriptions;
+use App\Models\Country;
+use App\Models\Comments;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -27,7 +29,7 @@ class User extends Authenticatable
      */
     protected $table = 'users';
     protected $fillable = [
-        'name', 'street', 'postcode', 'city', 'country','email', 'password','role'
+        'name', 'street', 'postcode', 'city', 'country', 'email', 'password', 'role', 'country_id', 'comments_id'
         ];
 
     /**
@@ -50,11 +52,17 @@ class User extends Authenticatable
 
     public $timestamps = false;
 
-//    public function setPasswordAttribute($password)
-//    {
-//        $this->attributes['password'] = bcrypt($password);
-//    }
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
+    }
     public function subscription() {
         return $this->hasMany(Subscriptions::class);
+    }
+    public function country() {
+        return $this->belongsTo(Country::class);
+    }
+    public function comments() {
+        return $this->hasMany(Comments::class);
     }
 }

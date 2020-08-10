@@ -43,12 +43,13 @@ $factory->define(User::class, function (Faker $faker) {
         'street' => $faker->streetAddress,
         'postcode' => $faker->postcode,
         'city' => $faker->city,
-        'country'=> $faker->country,
         'email' => $faker->unique()->safeEmail,
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
         'role' => $faker->randomElement($role),
         'remember_token' => Str::random(10),
         'created_at' => now(),
         'updated_at' => now(),
+
+        'country_id' => '1'
     ];
 });

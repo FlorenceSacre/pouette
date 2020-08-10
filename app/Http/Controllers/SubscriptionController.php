@@ -44,11 +44,11 @@ class SubscriptionController extends Controller
                 'street' => request('street'),
                 'postcode' => request('postcode'),
                 'city' => request('city'),
-                'country' => request('country'),
                 'email' => request('email'),
-                'password' => request(bcrypt('password')),
+                'password' => request('password'),
                 'role' => $role,
                 'remember_token' => request('stripeToken'),
+                'country_id' => request('country')
             ]);
         }
 
@@ -64,9 +64,11 @@ class SubscriptionController extends Controller
         }
         $subscription = Subscriptions::create([
             'stripe_id' => $customer->id,
+            'name' => request('name'),
+            'email' => request('email'),
             'amount' => request('amount'),
             'unsubscription_token' => Str::random(),
-            'users_id' => $idusers,
+            'users_id' => $idusers
         ]);
 
         $subscription->sendMeAnEmail();
