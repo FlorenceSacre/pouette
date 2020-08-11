@@ -73,6 +73,6 @@ class SubscriptionController extends Controller
 
         $subscription->sendMeAnEmail();
 
-        dd($customer, $subscription);
+        return view('subscribe.SubscriptionOk');
     }
 }

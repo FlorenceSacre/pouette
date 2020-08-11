@@ -54,13 +54,11 @@ Route::get('hiver', function() {return view('hiver.index');});
 Auth::routes();
 Auth::routes(['register' => false]);
 
-Route::get('email', 'EmailController@getForm');
-Route::post('email', ['uses' => 'EmailController@postForm', 'as' => 'storeEmail']);
-
 Route::resource('/user', 'UserController');
 
 Route::get('/subscribe', function() {return view('subscribe.index');});
 Route::post('/subscription', 'SubscriptionController');
+//Route::post('/subscription', 'SubscriptionController');
 Route::get('emails.new-subscribe');
 Route::get('/unsubscription/{token}', 'UnsubscriptionController');
 
