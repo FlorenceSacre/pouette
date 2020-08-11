@@ -11,21 +11,23 @@
 |
 */
 
+Auth::routes();
+Auth::routes(['register' => false]);
+
 Route::get('/', function () {
 	$user = Auth::user();
     var_dump($user);
 });
 
 Route::get('/yolo', function () {
-	// Sorry 
 	$user = App\User::find(1);
-    $user->password = "password";
+    $user->password = "admin";
     $user->save();
 	$user = App\User::find(2);
-    $user->password = "customer";
+    $user->password = "subscriber";
     $user->save();
     $user = App\User::find(3);
-    $user->password = "subscriber";
+    $user->password = "subunlimited";
     $user->save();
 });
 
@@ -34,16 +36,6 @@ Route::get('/logout', function () {
     var_dump("Logout.");
 });
 
-Route::get('/dashboard', function () {
-	$user = Auth::user();
-	if(!empty($user->admin)){
-        printf('You are <span style="text-decoration: line-through;">a wizard</span> an admin, %s', $user->name);
-    }else{
-        echo "Are you lost?";
-    }
-});
-
-
 
 Route::get('home', 'HomeController@index')->name('home');
 
@@ -51,19 +43,15 @@ Route::get('paysage', function() {return view('paysage.index');});
 Route::get('animaux', function() {return view('animaux.index');});
 Route::get('hiver', function() {return view('hiver.index');});
 
-Auth::routes();
-Auth::routes(['register' => false]);
-
 Route::resource('/user', 'UserController');
 
 Route::get('/subscribe', function() {return view('subscribe.index');});
 Route::post('/subscription', 'SubscriptionController');
-//Route::post('/subscription', 'SubscriptionController');
 Route::get('emails.new-subscribe');
 Route::get('/unsubscription/{token}', 'UnsubscriptionController');
 
 Route::post('login', 'Auth\LoginController@login');
-//
+
 //Route::get('admin', function() {
 //    return view('admin.index');
 //});

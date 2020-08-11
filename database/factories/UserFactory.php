@@ -17,27 +17,7 @@ use Illuminate\Support\Str;
 */
 
 $factory->define(User::class, function (Faker $faker) {
-//    $gender = ['male', 'female'];
-//    $role = ['customer'];
-//    //$subscription = Subscription::all()->pluck('id')->toArray();
-//    return [
-//        'username' => $faker->userName,
-//        'lastname' => $faker->lastName,
-//        'firstname' => $faker->firstName,
-//        'gender' => $faker->randomElement($gender),
-//        'birthday' => $faker->dateTimeBetween('1900-01-01 00:00:00', '1999-12-31 23:59:59'),
-//        'postal_code' => $faker->postcode,
-//        'city' => $faker->city,
-//        'country'=> $faker->country,
-//        'email' => $faker->unique()->safeEmail,
-//        'email_verified_at' => now(),
-//        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-//        'role' => $faker->randomElement($role),
-//        'remember_token' => Str::random(10),
-//        'created_at' => now(),
-//        'updated_at' => now(),
-//        'subscription_id' => $faker->randomElement($subscription),
-    $role = ['customer', 'subscriber'];
+    $role = ['subscriber', 'subunlimited'];
     return [
         'name' => $faker->Name,
         'street' => $faker->streetAddress,
@@ -47,9 +27,7 @@ $factory->define(User::class, function (Faker $faker) {
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
         'role' => $faker->randomElement($role),
         'remember_token' => Str::random(10),
-        'created_at' => now(),
-        'updated_at' => now(),
-
-        'country_id' => '1'
+        'country_id' => mt_rand(1, 4),
+        'comments_id' => mt_rand(1, 10)
     ];
 });

@@ -49,7 +49,7 @@
                         <a href="#">Retour à la page précédente</a>
                     @endif
 
-                    @can('isCustomer')
+                    @can('isSubscriber')
                         <video controls width="800">
                             <source src="{{asset($v->videoBQ)}}" type="video/mp4">
                         </video>
@@ -67,12 +67,18 @@
                         <br /><br /><a href="#">Retour à la page précédente</a>
                     @endcan
 
-                    @can('isSubscriber')
+                    @can('isSubscriberUnlimited')
                         <video controls width="800">
                             <source src="{{asset($v->videoHQ)}}" type="video/mp4">
                         </video>
                         <h3>{{$v->titre}}</h3>
                         <h3>{{$v->categorie}}</h3>
+
+                        <h3>{{$v->comments_id}}</h3>
+                        <?php
+                        $commments = DB::table('comments')->get(); ?>
+                        <p><?php echo $commments; ?></p>
+
                         <br /><br /><br /><br /><br />
                         <h3>Vous aimerez aussi</h3>
                         <?php

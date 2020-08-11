@@ -35,9 +35,9 @@ class SubscriptionController extends Controller
         $verif_email = DB::table('users')->where('email',$email_form)->first();
         if(!isset($verif_email)) {
             if (request('amount') == '5') {
-                $role = 'customer';
-            } else {
                 $role = 'subscriber';
+            } else {
+                $role = 'subunlimited';
             }
             $users = User::create([
                 'name' => request('name'),
@@ -73,6 +73,6 @@ class SubscriptionController extends Controller
 
         $subscription->sendMeAnEmail();
 
-        return view('subscribe.SubscriptionOk');
+        return view('subscribe.subscriptionOk');
     }
 }

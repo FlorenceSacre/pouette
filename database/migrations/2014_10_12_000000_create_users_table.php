@@ -22,9 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->boolean('admin')->default(0);
-            $table->enum('role',['customer', 'subscriber']);
+            $table->enum('role',['subscriber', 'subunlimited']);
             $table->rememberToken();
-            $table->timestamps(); //create_at et update_at
 
             $table->bigInteger('country_id')
                 ->unsigned()

@@ -23,9 +23,9 @@
                         <ul>
                             <li><a href="{{URL('../login')}}">Connexion</a></li>
                             <li><a href="{{URL('../subscribe')}}">S'abonner</a></li>
-                            {{--@if(Auth::user())--}}
-                                {{--<li><a href="{{route('logout')}}">@php $user = Auth::user()->name;--}}
-                                {{--echo $user; @endphp</a></li>--}}
+                            @if(Auth::user())
+                                <li><a href="{{route('logout')}}">@php $user = Auth::user()->name;
+                                echo $user; @endphp</a></li>
                                 {{--<li class="nav-item dropdown">--}}
                                     {{--<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>--}}
                                         {{--{{ Auth::user()->name }} <span class="caret"></span>--}}
@@ -43,9 +43,9 @@
                                         {{--</form>--}}
                                     {{--</div>--}}
                                 {{--</li>--}}
-                            {{--@else--}}
-                                {{--<li><a>@php echo 'Visiteur'; @endphp</a></li>--}}
-                            {{--@endif--}}
+                            @else
+                                <li><a>@php echo 'Visiteur'; @endphp</a></li>
+                            @endif
                         </ul>
                     </nav>
                     </div>
@@ -67,15 +67,6 @@
                         @foreach ($videos as $video)
                             <a href="{{route('video',['id'=>$video->id])}}"><img src="{{asset($video->image)}}" width="300px" /></a>
                         @endforeach
-                    <!-- Content Debugger -->
-                    @can('isCustomer')
-                        @include('home.customer')
-                    @endcan
-
-                    <!-- Content Debugger -->
-                    @can('isSubscriber')
-                        @include('home.subscriber')
-                    @endcan
                 </section>
             </div><!-- end content -->
         </div><!-- end container -->

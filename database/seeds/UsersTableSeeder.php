@@ -18,20 +18,10 @@ class UsersTableSeeder extends Seeder
             'postcode' => '5000',
             'city' => 'Namur',
             'email' => 'admin@example.com',
-            'password' => bcrypt('password'),
+            'password' => bcrypt('admin'),
             'admin' => 1,
-            'role' => 'subscriber',
-            'country_id' => '1'
-        ]);
-        User::create([
-            'name' => 'Customer',
-            'street' => 'CustomerStreet',
-            'postcode' => '5000',
-            'city' => 'Namur',
-            'email' => 'customer@example.com',
-            'password' => bcrypt('customer'),
-            'admin' => 0,
-            'role' => 'customer',
+            'role' => 'subunlimited',
+            'remember_token' => Str::random(10),
             'country_id' => '1'
         ]);
         User::create([
@@ -43,6 +33,19 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('subscriber'),
             'admin' => 0,
             'role' => 'subscriber',
+            'remember_token' => Str::random(10),
+            'country_id' => '1'
+        ]);
+        User::create([
+            'name' => 'Subscriber unlimited',
+            'street' => 'SubunlimitedStreet',
+            'postcode' => '5000',
+            'city' => 'Namur',
+            'email' => 'subunlimited@example.com',
+            'password' => bcrypt('subunlimited'),
+            'admin' => 0,
+            'role' => 'subunlimited',
+            'remember_token' => Str::random(10),
             'country_id' => '1'
         ]);
         factory(User::class, 10)->create();
