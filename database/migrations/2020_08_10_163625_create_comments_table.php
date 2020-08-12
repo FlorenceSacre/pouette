@@ -14,7 +14,7 @@ class CreateCommentsTable extends Migration
     public function up()
     {
         Schema::create('comments', function (Blueprint $table) {
-            $table->bigIncrements('id')->autoIncrement();
+            $table->bigIncrements('id_comments');
             $table->string('comment');
         });
     }

@@ -57,6 +57,7 @@ Route::post('login', 'Auth\LoginController@login');
 //});
 
 Route::get('video/{id}', 'VideoController@index')->name('video');
+
 Route::get('add', 'AddVideoController@showUploadForm')->name('upload.video');
 Route::post('add', 'AddVideoController@storeFile');
 

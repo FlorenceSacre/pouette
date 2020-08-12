@@ -73,12 +73,12 @@
                         </video>
                         <h3>{{$v->titre}}</h3>
                         <h3>{{$v->categorie}}</h3>
-
-                        <h3>{{$v->comments_id}}</h3>
-                        <?php
-                        $commments = DB::table('comments')->get(); ?>
-                        <p><?php echo $commments; ?></p>
-
+                        @foreach($comusers as $comuser)
+                            @foreach($comvideos as $comvideo)
+                            <h3>{{$comuser->name}}</h3>
+                            <h3>{{$comvideo->comment}}</h3>
+                            @endforeach
+                        @endforeach
                         <br /><br /><br /><br /><br />
                         <h3>Vous aimerez aussi</h3>
                         <?php
@@ -95,4 +95,4 @@
             </div><!-- end content -->
         </div><!-- end container -->
     </body>
-    @endsection
+@endsection
