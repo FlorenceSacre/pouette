@@ -12,7 +12,7 @@ class Subscriptions extends Model
     protected $guarded = [];
 
     public function user() {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'users');
     }
 
     public function getUnsubscriptionLinkAttribute() {

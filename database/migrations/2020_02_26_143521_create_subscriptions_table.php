@@ -21,10 +21,7 @@ class CreateSubscriptionsTable extends Migration
             $table->unsignedInteger('amount');
             $table->string('unsubscription_token')->unique();
             $table->timestamps();
-
-            $table->bigInteger('users_id')
-                  ->unsigned()
-                  ->index();
+            $table->bigInteger('users_id')->unsigned()->nullable();
         });
     }
 

@@ -20,11 +20,6 @@ class CreateVideoTable extends Migration
             $table->string('videoBQ');
             $table->string('videoHQ');
             $table->string('image');
-
-            $table->bigInteger('comments_id')
-                ->unsigned()
-                ->index()
-                ->nullable();
         });
     }
 

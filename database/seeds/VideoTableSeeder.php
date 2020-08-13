@@ -19,7 +19,6 @@ class VideoTableSeeder extends Seeder
             'videoBQ' => 'storage/app/public/videos/BeachBQ.mp4',
             'videoHQ' => 'storage/app/public/videos/BeachHQ.mp4',
             'image' => 'storage/app/public/images/Beach.png',
-            'comments_id' => '4',
         ]);
         Video::create([
             'id' => '2',
@@ -28,7 +27,6 @@ class VideoTableSeeder extends Seeder
             'videoBQ' => 'storage/app/public/videos/MountainsBQ.mp4',
             'videoHQ' => 'storage/app/public/videos/MountainsHQ.mp4',
             'image' => 'storage/app/public/images/Mountains.png',
-            'comments_id' => '5',
         ]);
         Video::create([
             'id' => '3',
@@ -37,7 +35,6 @@ class VideoTableSeeder extends Seeder
             'videoBQ' => 'storage/app/public/videos/CascadeBQ.mp4',
             'videoHQ' => 'storage/app/public/videos/CascadeHQ.mp4',
             'image' => 'storage/app/public/images/Cascade.png',
-            'comments_id' => '6',
         ]);
         Video::create([
             'id' => '4',
@@ -54,7 +51,6 @@ class VideoTableSeeder extends Seeder
             'videoBQ' => 'storage/app/public/videos/SkisBQ.mp4',
             'videoHQ' => 'storage/app/public/videos/SkisHQ.mp4',
             'image' => 'storage/app/public/images/Skis.png',
-            'comments_id' => '7',
         ]);
         Video::create([
             'id' => '6',
@@ -63,7 +59,6 @@ class VideoTableSeeder extends Seeder
             'videoBQ' => 'storage/app/public/videos/SunriseBQ.mp4',
             'videoHQ' => 'storage/app/public/videos/SunriseHQ.mp4',
             'image' => 'storage/app/public/images/Sunrise.png',
-            'comments_id' => '3',
         ]);
         Video::create([
             'id' => '7',
@@ -88,7 +83,6 @@ class VideoTableSeeder extends Seeder
             'videoBQ' => 'storage/app/public/videos/HedgehogBQ.mp4',
             'videoHQ' => 'storage/app/public/videos/HedgehogHQ.mp4',
             'image' => 'storage/app/public/images/Hedgehog.png',
-            'comments_id' => '8',
         ]);
         Video::create([
             'id' => '10',
@@ -97,7 +91,6 @@ class VideoTableSeeder extends Seeder
             'videoBQ' => 'storage/app/public/videos/Roe_DeerBQ.mp4',
             'videoHQ' => 'storage/app/public/videos/Roe_DeerHQ.mp4',
             'image' => 'storage/app/public/images/Roe_Deer.png',
-            'comments_id' => '9',
         ]);
         Video::create([
             'id' => '11',
@@ -106,7 +99,6 @@ class VideoTableSeeder extends Seeder
             'videoBQ' => 'storage/app/public/videos/HuskyBQ.mp4',
             'videoHQ' => 'storage/app/public/videos/HuskyHQ.mp4',
             'image' => 'storage/app/public/images/Husky.png',
-            'comments_id' => '1',
         ]);
         Video::create([
             'id' => '12',
@@ -171,7 +163,6 @@ class VideoTableSeeder extends Seeder
             'videoBQ' => 'storage/app/public/videos/ReindeerBQ.mp4',
             'videoHQ' => 'storage/app/public/videos/ReindeerHQ.mp4',
             'image' => 'storage/app/public/images/Reindeer.png',
-            'comments_id' => '2',
         ]);
         Video::create([
             'id' => '20',
@@ -196,7 +187,6 @@ class VideoTableSeeder extends Seeder
             'videoBQ' => 'storage/app/public/videos/SnowBQ.mp4',
             'videoHQ' => 'storage/app/public/videos/SnowHQ.mp4',
             'image' => 'storage/app/public/images/Snow.png',
-            'comments_id' => '7',
         ]);
         Video::create([
             'id' => '23',
@@ -205,7 +195,6 @@ class VideoTableSeeder extends Seeder
             'videoBQ' => 'storage/app/public/videos/BirdBQ.mp4',
             'videoHQ' => 'storage/app/public/videos/BirdHQ.mp4',
             'image' => 'storage/app/public/images/Bird.png',
-            'comments_id' => '10',
         ]);
         Video::create([
             'id' => '24',

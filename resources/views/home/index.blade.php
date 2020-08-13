@@ -21,8 +21,8 @@
                         </form>
                     <nav>
                         <ul>
-                            <li><a href="{{URL('../login')}}">Connexion</a></li>
                             <li><a href="{{URL('../subscribe')}}">S'abonner</a></li>
+                            <li><a href="{{URL('../login')}}">Connexion</a></li>
                             @if(Auth::user())
                                 <li><a href="{{route('logout')}}">@php $user = Auth::user()->name;
                                 echo $user; @endphp</a></li>
@@ -51,7 +51,7 @@
                     </div>
                     <h2>E-play</h2>
                     <h3>Découvrez une collection de vidéos uniques et enrichissantes</h3>
-                </div>
+                {{--</div>--}}
             </header>
             <div id="content">
                 <nav class="categorie">

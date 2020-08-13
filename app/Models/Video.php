@@ -13,7 +13,7 @@ class video extends Model
     protected $guarded = [];
 
     protected $fillable = [
-        'id','titre', 'video','image', 'comments_id'
+        'id','titre', 'categorie', 'videoBQ', 'videoHQ' ,'image'
     ];
     public function comments() {
         return $this->hasMany(Comments::class);

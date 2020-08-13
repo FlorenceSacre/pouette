@@ -9,8 +9,8 @@
                     <h1 id="logo-florence-sacré"><a href="{{URL('home')}}">e-play</a></h1>
                     <nav>
                         <ul>
-                            <li><a href="{{URL('../login')}}">Connexion</a></li>
                             <li><a href="{{URL('../subscribe')}}">S'abonner</a></li>
+                            <li><a href="{{URL('../login')}}">Connexion</a></li>
                             @if(Auth::user())
                                 {{--<li><a href="{{route('logout')}}">@php $user = Auth::user()->name;--}}
                                 {{--echo $user; @endphp</a></li>--}}
@@ -73,12 +73,6 @@
                         </video>
                         <h3>{{$v->titre}}</h3>
                         <h3>{{$v->categorie}}</h3>
-                        @foreach($comusers as $comuser)
-                            @foreach($comvideos as $comvideo)
-                            <h3>{{$comuser->name}}</h3>
-                            <h3>{{$comvideo->comment}}</h3>
-                            @endforeach
-                        @endforeach
                         <br /><br /><br /><br /><br />
                         <h3>Vous aimerez aussi</h3>
                         <?php

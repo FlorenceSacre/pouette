@@ -14,7 +14,7 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id')->unique()->autoIncrement(); //primary key
+            $table->bigIncrements('id_users')->unique()->autoIncrement(); //primary key
             $table->string('name');
             $table->string('street');
             $table->string('postcode');
@@ -24,14 +24,7 @@ class CreateUsersTable extends Migration
             $table->boolean('admin')->default(0);
             $table->enum('role',['subscriber', 'subunlimited']);
             $table->rememberToken();
-
-            $table->bigInteger('country_id')
-                ->unsigned()
-                ->index();
-            $table->bigInteger('comments_id')
-                ->unsigned()
-                ->index()
-                ->nullable();
+            $table->bigInteger('country_id')->unsigned()->nullable();
         });
     }
 

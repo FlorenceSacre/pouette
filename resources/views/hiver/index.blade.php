@@ -9,8 +9,8 @@
                 <h1 id="logo-florence-sacré"><a href="{{URL('home')}}">e-play</a></h1>
                 <nav>
                     <ul>
-                        <li><a href="{{URL('../login')}}">Connexion</a></li>
                         <li><a href="{{URL('../subscribe')}}">S'abonner</a></li>
+                        <li><a href="{{URL('../login')}}">Connexion</a></li>
                         @if(Auth::user())
                             {{--<li><a href="{{route('logout')}}">@php $user = Auth::user()->name;--}}
                             {{--echo $user; @endphp</a></li>--}}

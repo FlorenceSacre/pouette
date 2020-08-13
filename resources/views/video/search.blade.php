@@ -16,9 +16,8 @@
                 </form>
                 <nav>
                     <ul>
-                        <li><a href="{{URL('../login')}}">Connexion</a></li>
-                    <!--<li><a href="{{URL('../register')}}">Inscription</a></li>-->
                         <li><a href="{{URL('../subscribe')}}">S'abonner</a></li>
+                        <li><a href="{{URL('../login')}}">Connexion</a></li>
                         @if(Auth::user())
                             {{--<li><a href="{{route('logout')}}">@php $user = Auth::user()->name;--}}
                             {{--echo $user; @endphp</a></li>--}}

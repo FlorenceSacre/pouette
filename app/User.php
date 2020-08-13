@@ -29,7 +29,7 @@ class User extends Authenticatable
      */
     protected $table = 'users';
     protected $fillable = [
-        'name', 'street', 'postcode', 'city', 'country', 'email', 'password', 'role', 'country_id', 'comments_id'
+        'name', 'street', 'postcode', 'city', 'country', 'email', 'password', 'role', 'country_id'
         ];
 
     /**
@@ -60,9 +60,9 @@ class User extends Authenticatable
         return $this->hasMany(Subscriptions::class);
     }
     public function country() {
-        return $this->belongsTo(Country::class);
+        return $this->belongsTo(Country::class,'country');
     }
     public function comments() {
-        return $this->hasMany(Comments::class);
+        return $this->hasOne(Comments::class);
     }
 }

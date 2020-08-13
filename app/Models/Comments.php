@@ -14,12 +14,12 @@ class Comments extends Model
     protected $guarded = [];
 
     protected $fillable = [
-        'id','comment'
+        'id','comment', 'users_id', 'video_id'
     ];
     public function user() {
-        return $this->hasOne(User::class);
+        return $this->hasOne(User::class,'users');
     }
     public function video() {
-        return $this->hasOne(Video::class);
+        return $this->hasOne(Video::class, 'video');
     }
 }
