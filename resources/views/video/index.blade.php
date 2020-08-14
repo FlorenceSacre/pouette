@@ -73,6 +73,16 @@
                         </video>
                         <h3>{{$v->titre}}</h3>
                         <h3>{{$v->categorie}}</h3>
+                        <form action="{{ action('VideoController@storeCom',['id'=>$v->id])}}" method="post" enctype="multipart/form-data">
+                            {{csrf_field()}}
+                            <input type="text" name="com" />
+                            <input type="submit" value="Envoyer" />
+                        </form>
+
+                        @foreach($comvideos as $comvideo)
+                            <h3>{{$comvideo->name}}</h3>
+                            <h3>{{$comvideo->comment}}</h3>
+                        @endforeach
                         <br /><br /><br /><br /><br />
                         <h3>Vous aimerez aussi</h3>
                         <?php
