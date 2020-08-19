@@ -20,7 +20,7 @@ class UserController extends Controller
     }
     protected $userRepository;
 
-    protected $nbrPerPage = 4;
+    protected $nbrPerPage = 5;
 
     public function __construct(UserRepository $userRepository)
     {
@@ -65,7 +65,7 @@ class UserController extends Controller
     {
         $this->userRepository->update($id, $request->all());
 
-        return redirect('user')->withOk("L'utilisateur " . $request->input('firstname') . " a été modifié.");
+        return redirect('user')->withOk("L'utilisateur " . $request->input('name') . " a été modifié.");
     }
 
     public function destroy($id)

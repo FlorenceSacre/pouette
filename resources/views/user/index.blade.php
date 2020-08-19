@@ -15,9 +15,7 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            {{--<th>Pseudo</th>--}}
-                            <th>Nom</th>
-                            {{--<th>Prénom</th>--}}
+                            <th>Nom et prénom</th>
                             <th></th>
                         </tr>
                     </thead>

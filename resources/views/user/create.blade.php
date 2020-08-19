@@ -8,35 +8,32 @@
             <div class="panel-body">
                 <div class="col-sm-12">
                     {!! Form::open(['route' => 'user.store', 'class' => 'form-horizontal panel']) !!}
-                    <div class="form-group {!! $errors->has('username') ? 'has-error' : '' !!}">
-                        {!! Form::text('username', null, ['class' => 'form-control', 'placeholder' => 'Pseudo']) !!}
-                        {!! $errors->first('username', '<small class="help-block">:message</small>') !!}
+                    <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!}">
+                        {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nom']) !!}
+                        {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
                     </div>
-                    <div class="form-group {!! $errors->has('lastname') ? 'has-error' : '' !!}">
-                        {!! Form::text('lastname', null, ['class' => 'form-control', 'placeholder' => 'Nom']) !!}
-                        {!! $errors->first('lastname', '<small class="help-block">:message</small>') !!}
+                    <div class="form-group {!! $errors->has('street') ? 'has-error' : '' !!}">
+                        {!! Form::text('street', null, ['class' => 'form-control', 'placeholder' => 'Adresse']) !!}
+                        {!! $errors->first('street', '<small class="help-block">:message</small>') !!}
                     </div>
-                    <div class="form-group {!! $errors->has('firstname') ? 'has-error' : '' !!}">
-                        {!! Form::text('firstname', null, ['class' => 'form-control', 'placeholder' => 'Prénom']) !!}
-                        {!! $errors->first('firstname', '<small class="help-block">:message</small>') !!}
+                    <div class="form-group {!! $errors->has('postcode') ? 'has-error' : '' !!}">
+                        {!! Form::text('postcode', null, ['class' => 'form-control', 'placeholder' => 'Code postal']) !!}
+                        {!! $errors->first('postcode', '<small class="help-block">:message</small>') !!}
                     </div>
-                    <label>Genre</label>
+                    <div class="form-group {!! $errors->has('city') ? 'has-error' : '' !!}">
+                        {!! Form::text('city', null, ['class' => 'form-control', 'placeholder' => 'Ville']) !!}
+                        {!! $errors->first('city', '<small class="help-block">:message</small>') !!}
+                    </div>
+                    <label>Pays</label>
                     <div class="form-group">
                         <div class="checkbox">
                             <label>
-                                {!! Form::checkbox('male', 1, null) !!} Homme<br />
-                                {!! Form::checkbox('female', 2, null) !!} Femme
+                                {!! Form::checkbox('belgique', 1, null) !!} Belgique<br />
+                                {!! Form::checkbox('italie', 2, null) !!} Italie<br />
+                                {!! Form::checkbox('espagne', 3, null) !!} Espagne<br />
+                                {!! Form::checkbox('portugal', 4, null) !!} Portugal
                             </label>
                         </div>
-                    </div>
-                    {{--<div class="form-group {!! $errors->has('gender') ? 'has-error' : '' !!}">--}}
-                        {{--{!! Form::text('gender', null, ['class' => 'form-control', 'placeholder' => 'Genre']) !!}--}}
-                        {{--{!! $errors->first('gender', '<small class="help-block">:message</small>') !!}--}}
-                    {{--</div>--}}
-                    <label>Date d'anniversaire</label>
-                    <div class="form-group {!! $errors->has('birthday') ? 'has-error' : '' !!}">
-                        {!! Form::date('birthday', null, ['class' => 'form-control']) !!}
-                        {!! $errors->first('birthday', '<small class="help-block">:message</small>') !!}
                     </div>
                     <div class="form-group {!! $errors->has('email') ? 'has-error' : '' !!}">
                         {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email']) !!}
@@ -53,9 +50,8 @@
                     <div class="form-group">
                         <div class="checkbox">
                             <label>
-                                {!! Form::checkbox('customer', 1, null) !!} Client<br />
-                                {!! Form::checkbox('provider', 2, null) !!} Fournisseur<br />
-                                {!! Form::checkbox('customer and provider', 3, null) !!} Client et fournisseur
+                                {!! Form::checkbox('subscriber', 1, null) !!} Subscriber<br />
+                                {!! Form::checkbox('subunlimited', 2, null) !!} Subunlimited
                             </label>
                         </div>
                     </div>

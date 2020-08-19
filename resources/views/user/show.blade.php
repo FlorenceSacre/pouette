@@ -6,13 +6,11 @@
         <div class="panel panel-primary">
             <div class="panel-heading">Fiche d'utilisateur</div>
             <div class="panel-body">
-                <p>Pseudo : {{ $user->username }}</p>
-                <p>Nom : {{ $user->lastname }}</p>
-                <p>Prénom : {{ $user->firstname }}</p>
-                <p>Date d'anniversaire : {{ $user->birthday }}</p>
-                <p>Code postal : {{ $user->postal_code }}</p>
+                <p>Nom et prénom : {{ $user->name }}</p>
+                <p>Adresse : {{ $user->street }}</p>
+                <p>Code postal : {{ $user->postcode }}</p>
                 <p>Ville : {{ $user->city }}</p>
-                <p>Pays : {{ $user->country }}</p>
+                <p>Pays : {{ $user->country_id }}</p>
                 <p>Email : {{ $user->email }}</p>
                 <p>Role : {{ $user->role }}</p>
                 @if($user->admin == 1)
