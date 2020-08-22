@@ -1,3 +1,19 @@
+/* --------------- Fonts --------------- */
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/public/fonts/Montserrat-Thin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat-Medium';
+    src: url('/public/fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* --------------- Général --------------- */
 
 body {
@@ -17,13 +33,13 @@ body {
 
 #topbar {
     height: 40px;
-    background-color: #1995e0;
+    background-color: #457DBB;
     position: fixed;
     width: 100%;
     display: block;
     z-index: 2;
     nav {
-        top: 3px;
+        top: -10px;
         position: relative;
         & a {
             color: #fff;
@@ -31,8 +47,8 @@ body {
             display: block;
             font-size: 18px;
             text-decoration: none;
-            font-family: 'josefin_sansbold', sans-serif;
-            &:hover {color: #1995e0;}
+            font-family: 'Montserrat-Medium', sans-serif;
+            &:hover {color: #132959;}
         }
         & ul {
             margin: 0;
@@ -59,9 +75,9 @@ body {
         color: black;
         padding: 6px;
         display: block;
-        font-size: 18px;
+        font-size: 16px;
         text-decoration: none;
-        font-family: 'josefin_sansbold', sans-serif;
+        font-family: 'Montserrat-Medium', sans-serif;
         &:hover {
             color: #ffffff;
             padding: 10px;
@@ -97,7 +113,7 @@ body {
 //  top: 8px;
 //  color: #fff;
 //  text-align: center;
-//  font-family: 'comfortaaregular', cursive;
+//  font-family: 'Merriweather', sans-serif;
 //}
 //.home h3 {
 //  position: absolute;
@@ -123,7 +139,7 @@ body {
     max-width: 500px;
     padding: 10px 20px;
     margin: 20px auto;
-    background-color: #1995e0;
+    background-color: #457DBB;
     border-radius: 8px;
     fieldset {border: none;}
     label {
@@ -149,7 +165,7 @@ body {
     input[type="checkbox"] {
         position: absolute;
         &:focus {
-            background: #d2d9dd;
+            //background: #4D664A;
         }
     }
     input[type="submit"] {
@@ -191,11 +207,14 @@ form #subscription {
         margin-bottom: 8px;
         margin-top: 5px;
     }
+    #name {
+        margin-top: 20px;
+    }
     input[type="radio"] {
         position: relative;
         top: -26px;
         &:focus {
-            background: #d2d9dd;
+            background: #132959;
         }
     }
     #amount {
@@ -203,7 +222,7 @@ form #subscription {
         margin-top: 10px;
         margin-left: 28px;
     }
-    input[type="text"], input[type="email"], input[type="password"] {
+    input[type="text"], input[type="email"], input[type="password"], select {
         border: none;
         border-radius: 4px;
         font-size: 15px;
@@ -231,4 +250,11 @@ form #subscription {
             background: #132959;
         }
     }
+}
+
+/* --------------- Vidéo --------------- */
+
+.video h3, figcaption {
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
 }

@@ -27,7 +27,7 @@
                 <div id="card-errors" role="alert"></div>
                 <div>
                     <div>
-                        <label for="name">Nom</label>
+                        <label for="name" id="name">Nom</label>
                         <input type="text" name="name" value="{{old('name')}}" placeholder="Nom prénom">
                     </div>
                     <div>
@@ -56,7 +56,7 @@
                         <input type="email" name="email" value="{{old('email')}}" placeholder="exemple@exemple.org" />
                     </div>
                     <div>
-                        <label for="password">Password</label>
+                        <label for="password">Mot de passe</label>
                         <input type="password" name="password" value="{{old('password')}}" placeholder="" />
                     </div>
                     <div>

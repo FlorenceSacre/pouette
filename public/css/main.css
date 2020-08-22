@@ -1,5 +1,21 @@
 @charset "UTF-8";
 
+/* --------------- Fonts --------------- */
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url("/public/fonts/Montserrat-Thin.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat-Medium';
+  src: url("/public/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* --------------- Général --------------- */
 
 body {
@@ -18,7 +34,7 @@ body {
 
 #topbar {
   height: 40px;
-  background-color: #1995e0;
+  background-color: #457DBB;
   position: fixed;
   width: 100%;
   display: block;
@@ -26,7 +42,7 @@ body {
 }
 
 #topbar nav {
-  top: 3px;
+  top: -10px;
   position: relative;
 }
 
@@ -36,11 +52,11 @@ body {
   display: block;
   font-size: 18px;
   text-decoration: none;
-  font-family: 'josefin_sansbold', sans-serif;
+  font-family: 'Montserrat-Medium', sans-serif;
 }
 
 #topbar nav a:hover {
-  color: #1995e0;
+  color: #132959;
 }
 
 #topbar nav ul {
@@ -72,9 +88,9 @@ body {
   color: black;
   padding: 6px;
   display: block;
-  font-size: 18px;
+  font-size: 16px;
   text-decoration: none;
-  font-family: 'josefin_sansbold', sans-serif;
+  font-family: 'Montserrat-Medium', sans-serif;
 }
 
 .categorie a:hover {
@@ -104,7 +120,7 @@ body {
   max-width: 500px;
   padding: 10px 20px;
   margin: 20px auto;
-  background-color: #1995e0;
+  background-color: #457DBB;
   border-radius: 8px;
 }
 
@@ -140,10 +156,6 @@ body {
 
 .form-add input[type="checkbox"] {
   position: absolute;
-}
-
-.form-add input[type="checkbox"]:focus {
-  background: #d2d9dd;
 }
 
 .form-add input[type="submit"] {
@@ -188,13 +200,17 @@ form #subscription label {
   margin-top: 5px;
 }
 
+form #subscription #name {
+  margin-top: 20px;
+}
+
 form #subscription input[type="radio"] {
   position: relative;
   top: -26px;
 }
 
 form #subscription input[type="radio"]:focus {
-  background: #d2d9dd;
+  background: #132959;
 }
 
 form #subscription #amount {
@@ -205,7 +221,8 @@ form #subscription #amount {
 
 form #subscription input[type="text"],
 form #subscription input[type="email"],
-form #subscription input[type="password"] {
+form #subscription input[type="password"],
+form #subscription select {
   border: none;
   border-radius: 4px;
   font-size: 15px;
@@ -234,5 +251,13 @@ form #subscription input[type="submit"] {
 form #subscription input[type="submit"]:hover {
   cursor: pointer;
   background: #132959;
+}
+
+/* --------------- Vidéo --------------- */
+
+.video h3,
+figcaption {
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
 }
 
