@@ -34,12 +34,13 @@ body {
 #topbar {
     height: 40px;
     background-color: #457DBB;
-    position: fixed;
+    //position: fixed;
     width: 100%;
     display: block;
     z-index: 2;
     nav {
         top: -10px;
+        right: 30px;
         position: relative;
         & a {
             color: #fff;
@@ -98,8 +99,17 @@ body {
     }
 }
 
+/* --------------- Home --------------- */
 
-
+.home section {
+    margin-left: 135px;
+    img {
+        margin-bottom: 25px;
+    }
+    img:first-child {
+        margin-right: 21px;
+    }
+}
 //.home #video-header {
 //  z-index: 100;
 //}
@@ -136,23 +146,35 @@ body {
 /* --------------- Add form --------------- */
 
 .form-add {
-    max-width: 500px;
-    padding: 10px 20px;
-    margin: 20px auto;
+    max-width: 510px;
+    padding: 14px 20px;
+    margin: 25px auto;
     background-color: #457DBB;
     border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    #formulaire {
+        max-width: 490px;
+        margin-left: 10px;
+    }
+    #titre {
+        font-size: 18px;
+        margin-top: 21px;
+        margin-bottom: 36px;
+        text-align: center;
+    }
     fieldset {border: none;}
     label {
         display: block;
-        margin-bottom: 8px;
-        margin-top: 5px;
+        margin-bottom: 10px;
     }
+    #videoBQ {margin-top: 36px;}
+    #videoHQ {margin-top: 30px;}
+    #image {margin-top: 31px;}
     #categorie {
         position: relative;
-        margin-top: 10px;
-        margin-left: 28px;
+        margin: 11px 0 0 28px;
     }
-    #image {margin-top: 10px;}
     input[type="text"] {
         border: none;
         border-radius: 4px;
@@ -160,18 +182,17 @@ body {
         padding: 10px;
         width: 100%;
         color: #8a97a0;
-        margin-bottom: 30px;
+        margin-bottom: 38px;
     }
     input[type="checkbox"] {
+        margin-top: 0;
         position: absolute;
-        &:focus {
-            //background: #4D664A;
-        }
     }
+    input[type="file"] {margin-top: -1px;}
     input[type="submit"] {
         position: relative;
         display: block;
-        margin-top: 22px;
+        margin: 24px 0 10px 0;
         padding: 10px 30px 10px 30px;
         color: #FFF;
         background: #234CA5;
@@ -181,7 +202,6 @@ body {
         width: 100%;
         border-radius: 4px;
         border: 2px solid #234CA5;
-        margin-bottom: 10px;
         &:hover {
             cursor: pointer;
             background: #132959;
@@ -229,7 +249,7 @@ form #subscription {
         padding: 10px;
         width: 100%;
         color: #8a97a0;
-        margin-bottom: 20px;
+        margin-bottom: 38px;
     }
     input[type="submit"] {
         position: relative;
@@ -249,6 +269,18 @@ form #subscription {
             cursor: pointer;
             background: #132959;
         }
+    }
+}
+
+/* --------------- Paysage --------------- */
+
+.paysage section {
+    margin-left: 135px;
+    img {
+        margin-bottom: 25px;
+    }
+    img:first-child {
+        margin-right: 21px;
     }
 }
 

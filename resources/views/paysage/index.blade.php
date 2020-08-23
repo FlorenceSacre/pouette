@@ -2,7 +2,7 @@
 @extends('style.style')
 
 @section('content')
-    <body class="index">
+    <body class="paysage">
     <div id="container">
         <header>
             <div id="topbar">
@@ -53,7 +53,7 @@
                 <?php
                 $videos = DB::table('video')->where('categorie','paysage')->get(); ?>
                 @foreach ($videos as $video)
-                    <a href="{{route('video',['id'=>$video->id])}}"><img src="{{asset($video->image)}}" width="300px" alt="{{$video->titre}}" /></a>
+                    <a href="{{route('video',['id'=>$video->id])}}"><img src="{{asset($video->image)}}" width="320px" alt="{{$video->titre}}" /></a>
                 @endforeach
             </section>
         </div><!-- end content -->

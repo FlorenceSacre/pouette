@@ -7,7 +7,7 @@
         <input type="hidden" name="stripeToken" id="stripeToken" />
         <div id="subscription">
             <fieldset>
-                <legend>Choisi ton abonnement</legend>
+                <legend>Choisissez votre abonnement</legend>
             <label for="5" id="amount">
                 <span>5€/mois</span>
             </label>

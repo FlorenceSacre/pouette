@@ -19,58 +19,58 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/hugrid.css')}}" />
     <script type="text/javascript" src="{{asset('javascript/jquery-1.6.2.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('javascript/hugrid.js')}}"></script>
-    {{--<script type="text/javascript">--}}
-    {{--definegrid = function() {--}}
-    {{--var browserWidth = $(window).width();--}}
-    {{--if (browserWidth >= 1000)--}}
-    {{--{--}}
-    {{--pageUnits = 'px';--}}
-    {{--colUnits = 'px';--}}
-    {{--pagewidth = 965;--}}
-    {{--columns = 9;--}}
-    {{--columnwidth = 85;--}}
-    {{--gutterwidth = 25;--}}
-    {{--pagetopmargin = 0;--}}
-    {{--rowheight = 25;--}}
-    {{--gridonload = 'off';--}}
-    {{--makehugrid();--}}
-    {{--}--}}
-    {{--if (browserWidth <= 768)--}}
-    {{--{--}}
-    {{--pageUnits = 'px';--}}
-    {{--colUnits = 'px';--}}
-    {{--pagewidth = 605;--}}
-    {{--columns = 6;--}}
-    {{--columnwidth = 80;--}}
-    {{--gutterwidth = 25;--}}
-    {{--pagetopmargin = 0;--}}
-    {{--rowheight = 25;--}}
-    {{--gridonload = 'off';--}}
-    {{--makehugrid();--}}
-    {{--}--}}
-    {{--if (browserWidth <= 400)--}}
-    {{--{--}}
-    {{--pageUnits = 'px';--}}
-    {{--colUnits = 'px';--}}
-    {{--pagewidth = 319;--}}
-    {{--columns = 2;--}}
-    {{--columnwidth = 147;--}}
-    {{--gutterwidth = 25;--}}
-    {{--pagetopmargin = 0;--}}
-    {{--rowheight = 25;--}}
-    {{--gridonload = 'off';--}}
-    {{--makehugrid();--}}
-    {{--}--}}
-    {{--};--}}
-    {{--$(document).ready(function() {--}}
-    {{--definegrid();--}}
-    {{--setgridonload();--}}
-    {{--});--}}
-    {{--$(window).resize(function() {--}}
-    {{--definegrid();--}}
-    {{--setgridonresize();--}}
-    {{--});--}}
-    {{--</script>--}}
+    <script type="text/javascript">
+    definegrid = function() {
+    var browserWidth = $(window).width();
+    if (browserWidth >= 1080)
+    {
+    pageUnits = 'px';
+    colUnits = 'px';
+    pagewidth = 1010;
+    columns = 9;
+    columnwidth = 90;
+    gutterwidth = 25;
+    pagetopmargin = 0;
+    rowheight = 25;
+    gridonload = 'on';
+    makehugrid();
+    }
+    if (browserWidth <= 768)
+    {
+    pageUnits = 'px';
+    colUnits = 'px';
+    pagewidth = 605;
+    columns = 6;
+    columnwidth = 80;
+    gutterwidth = 25;
+    pagetopmargin = 0;
+    rowheight = 25;
+    gridonload = 'off';
+    makehugrid();
+    }
+    if (browserWidth <= 400)
+    {
+    pageUnits = 'px';
+    colUnits = 'px';
+    pagewidth = 319;
+    columns = 2;
+    columnwidth = 147;
+    gutterwidth = 25;
+    pagetopmargin = 0;
+    rowheight = 25;
+    gridonload = 'off';
+    makehugrid();
+    }
+    };
+    $(document).ready(function() {
+    definegrid();
+    setgridonload();
+    });
+    $(window).resize(function() {
+    definegrid();
+    setgridonresize();
+    });
+    </script>
 </head>
 <body>
 {{--@if(!empty($errors))--}}

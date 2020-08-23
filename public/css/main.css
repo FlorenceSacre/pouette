@@ -35,7 +35,6 @@ body {
 #topbar {
   height: 40px;
   background-color: #457DBB;
-  position: fixed;
   width: 100%;
   display: block;
   z-index: 2;
@@ -43,6 +42,7 @@ body {
 
 #topbar nav {
   top: -10px;
+  right: 30px;
   position: relative;
 }
 
@@ -114,14 +114,42 @@ body {
   margin-left: 20px;
 }
 
+/* --------------- Home --------------- */
+
+.home section {
+  margin-left: 135px;
+}
+
+.home section img {
+  margin-bottom: 25px;
+}
+
+.home section img:first-child {
+  margin-right: 21px;
+}
+
 /* --------------- Add form --------------- */
 
 .form-add {
-  max-width: 500px;
-  padding: 10px 20px;
-  margin: 20px auto;
+  max-width: 510px;
+  padding: 14px 20px;
+  margin: 25px auto;
   background-color: #457DBB;
   border-radius: 8px;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.form-add #formulaire {
+  max-width: 490px;
+  margin-left: 10px;
+}
+
+.form-add #titre {
+  font-size: 18px;
+  margin-top: 21px;
+  margin-bottom: 36px;
+  text-align: center;
 }
 
 .form-add fieldset {
@@ -130,18 +158,24 @@ body {
 
 .form-add label {
   display: block;
-  margin-bottom: 8px;
-  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.form-add #videoBQ {
+  margin-top: 36px;
+}
+
+.form-add #videoHQ {
+  margin-top: 30px;
+}
+
+.form-add #image {
+  margin-top: 31px;
 }
 
 .form-add #categorie {
   position: relative;
-  margin-top: 10px;
-  margin-left: 28px;
-}
-
-.form-add #image {
-  margin-top: 10px;
+  margin: 11px 0 0 28px;
 }
 
 .form-add input[type="text"] {
@@ -151,17 +185,22 @@ body {
   padding: 10px;
   width: 100%;
   color: #8a97a0;
-  margin-bottom: 30px;
+  margin-bottom: 38px;
 }
 
 .form-add input[type="checkbox"] {
+  margin-top: 0;
   position: absolute;
+}
+
+.form-add input[type="file"] {
+  margin-top: -1px;
 }
 
 .form-add input[type="submit"] {
   position: relative;
   display: block;
-  margin-top: 22px;
+  margin: 24px 0 10px 0;
   padding: 10px 30px 10px 30px;
   color: #FFF;
   background: #234CA5;
@@ -171,7 +210,6 @@ body {
   width: 100%;
   border-radius: 4px;
   border: 2px solid #234CA5;
-  margin-bottom: 10px;
 }
 
 .form-add input[type="submit"]:hover {
@@ -229,7 +267,7 @@ form #subscription select {
   padding: 10px;
   width: 100%;
   color: #8a97a0;
-  margin-bottom: 20px;
+  margin-bottom: 38px;
 }
 
 form #subscription input[type="submit"] {
@@ -251,6 +289,20 @@ form #subscription input[type="submit"] {
 form #subscription input[type="submit"]:hover {
   cursor: pointer;
   background: #132959;
+}
+
+/* --------------- Paysage --------------- */
+
+.paysage section {
+  margin-left: 135px;
+}
+
+.paysage section img {
+  margin-bottom: 25px;
+}
+
+.paysage section img:first-child {
+  margin-right: 21px;
 }
 
 /* --------------- Vidéo --------------- */
