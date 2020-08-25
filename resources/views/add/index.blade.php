@@ -6,7 +6,7 @@
         {{csrf_field()}}
         <div id="formulaire">
             <fieldset id="titre">
-                <legend>Ajouter une vidéo</legend>
+                <legend id="titre-form">Ajouter une vidéo</legend>
             </fieldset>
             <div>
                 <label for="titre">Titre</label>
@@ -14,7 +14,7 @@
             </div>
             <div>
                 <fieldset>
-                    <legend>Choisis à quelle catégorie la vidéo appartient</legend>
+                    <legend>Choisir la ou les catégories de la vidéo</legend>
                     <div>
                         <input type="checkbox" id="paysage" name="categorie[]" value="voyage" />
                         <label for="categorie[]" id="categorie">Paysage</label>

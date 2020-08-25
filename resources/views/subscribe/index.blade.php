@@ -2,18 +2,18 @@
 @extends('style.style')
 
 @section('content')
-    <form action="/subscription" method="post" id="subscription">
+    <form action="/subscription" method="post" id="subscription" class="form-subscription">
         {{csrf_field()}}
         <input type="hidden" name="stripeToken" id="stripeToken" />
         <div id="subscription">
             <fieldset>
                 <legend>Choisissez votre abonnement</legend>
-            <label for="5" id="amount">
+            <label for="5" id="amount5">
                 <span>5€/mois</span>
             </label>
             <input type="radio" name="amount" value="5" id="5" required {{old('amount') === '5' ? 'checked' : ''}} />
-            <label for="12" id="amount">
-                <span>12€/mois</span>
+            <label for="12" id="amount12">
+                <span>12€/mois (meilleure qualité vidéo)</span>
             </label>
             <input type="radio" name="amount" value="12" id="12" required {{old('amount') === '12' ? 'checked' : ''}} />
             <div class="form-row">
@@ -31,20 +31,20 @@
                         <input type="text" name="name" value="{{old('name')}}" placeholder="Nom prénom">
                     </div>
                     <div>
-                        <label for="street">Adresse de facturation</label>
-                        <input type="text" name="street" id="street" value="{{old('street')}}" placeholder="42 rue de la Comté" />
+                        <label for="street" id="street">Adresse de facturation</label>
+                        <input type="text" name="street" value="{{old('street')}}" placeholder="42 rue de la Comté" />
                     </div>
                     <div>
-                        <label for="postcode">Code postal</label>
-                        <input type="text" name="postcode" id="postcode" value="{{old('postcode')}}" placeholder="5000" />
+                        <label for="postcode" id="postcode">Code postal</label>
+                        <input type="text" name="postcode" value="{{old('postcode')}}" placeholder="5000" />
                     </div>
                     <div>
-                        <label for="city">Ville</label>
-                        <input type="text" name="city" id="city" value="{{old('city')}}" placeholder="Namur" />
+                        <label for="city" id="city">Ville</label>
+                        <input type="text" name="city" value="{{old('city')}}" placeholder="Namur" />
                     </div>
                     <div>
-                        <label for="country">Pays</label>
-                        <select name="country" id="country">
+                        <label for="country" id="country">Pays</label>
+                        <select name="country">
                             <option value="1">Belgique</option>
                             <option value="2">Italie</option>
                             <option value="3">Espagne</option>
@@ -52,15 +52,15 @@
                         </select>
                     </div>
                     <div>
-                        <label for="email">Email</label>
+                        <label for="email" id="email">Email</label>
                         <input type="email" name="email" value="{{old('email')}}" placeholder="exemple@exemple.org" />
                     </div>
                     <div>
-                        <label for="password">Mot de passe</label>
+                        <label for="password" id="password">Mot de passe</label>
                         <input type="password" name="password" value="{{old('password')}}" placeholder="" />
                     </div>
                     <div>
-                        {{--<p>Annulable à tout moment en un clic</p>--}}
+                        <p id="unsubscription">Annulable à tout moment en un clic</p>
                     </div>
                 </div>
             </div>

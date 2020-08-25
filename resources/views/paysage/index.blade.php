@@ -6,7 +6,7 @@
     <div id="container">
         <header>
             <div id="topbar">
-                <h1 id="logo-florence-sacré"><a href="{{URL('home')}}">e-play</a></h1>
+                <a href="{{URL('home')}}"><img src="{{asset('images/logo.png')}}" width="80px" /></a>
                 <nav>
                     <ul>
                         <li><a href="{{URL('../subscribe')}}">S'abonner</a></li>

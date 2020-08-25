@@ -1,14 +1,14 @@
 /* --------------- Fonts --------------- */
 
 @font-face {
-    font-family: 'Montserrat';
-    src: url('/public/fonts/Montserrat-Thin.ttf') format('truetype');
+    font-family: 'Montserrat-Light';
+    src: url('/public/fonts/Montserrat-Light.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Montserrat-Medium';
+    font-family: 'Montserrat-Regular';
     src: url('/public/fonts/Montserrat-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
@@ -34,10 +34,13 @@ body {
 #topbar {
     height: 40px;
     background-color: #457DBB;
-    //position: fixed;
     width: 100%;
     display: block;
     z-index: 2;
+    img {
+        margin-top: 4px;
+        margin-left: 135px;
+    }
     nav {
         top: -10px;
         right: 30px;
@@ -48,7 +51,7 @@ body {
             display: block;
             font-size: 18px;
             text-decoration: none;
-            font-family: 'Montserrat-Medium', sans-serif;
+            font-family: 'Montserrat-Regular', sans-serif;
             &:hover {color: #132959;}
         }
         & ul {
@@ -78,7 +81,7 @@ body {
         display: block;
         font-size: 16px;
         text-decoration: none;
-        font-family: 'Montserrat-Medium', sans-serif;
+        font-family: 'Montserrat-Regular', sans-serif;
         &:hover {
             color: #ffffff;
             padding: 10px;
@@ -101,7 +104,7 @@ body {
 
 /* --------------- Home --------------- */
 
-.home section {
+section {
     margin-left: 135px;
     img {
         margin-bottom: 25px;
@@ -152,7 +155,7 @@ body {
     background-color: #457DBB;
     border-radius: 8px;
     font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat-Light', sans-serif;
     #formulaire {
         max-width: 490px;
         margin-left: 10px;
@@ -160,13 +163,17 @@ body {
     #titre {
         font-size: 18px;
         margin-top: 21px;
-        margin-bottom: 36px;
+        margin-bottom: 35px;
         text-align: center;
     }
     fieldset {border: none;}
+    #titre-form {
+        font-size: 18px;
+        font-family: 'Montserrat-Regular', sans-serif;
+    }
     label {
         display: block;
-        margin-bottom: 10px;
+        margin-bottom: 11px;
     }
     #videoBQ {margin-top: 36px;}
     #videoHQ {margin-top: 30px;}
@@ -187,12 +194,18 @@ body {
     input[type="checkbox"] {
         margin-top: 0;
         position: absolute;
+        &:focus {
+            background: #132959;
+        }
     }
-    input[type="file"] {margin-top: -1px;}
+    input[type="file"] {
+        margin-top: -2px;
+        font-family: 'Montserrat-Light', sans-serif;
+    }
     input[type="submit"] {
         position: relative;
         display: block;
-        margin: 24px 0 10px 0;
+        margin: 25px 0 10px 0;
         padding: 10px 30px 10px 30px;
         color: #FFF;
         background: #234CA5;
@@ -212,35 +225,42 @@ body {
 
 /* --------------- Subscribe --------------- */
 
-form #subscription {
-    max-width: 500px;
-    padding: 10px 20px;
-    margin: 20px auto;
+.form-subscription {
+    max-width: 510px;
+    padding: 14px 20px;
+    margin: 25px auto;
     background-color: #457DBB;
     border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Montserrat-Light', sans-serif;
+    #subscription {
+        max-width: 490px;
+        margin-left: 10px;
+    }
+    fieldset {margin-top: 19px;}
     legend {
-        font-size: 22px;
+        font-size: 18px;
         text-align: center;
+        font-family: 'Montserrat-Regular', sans-serif;
     }
-    label {
-        display: block;
-        margin-bottom: 8px;
-        margin-top: 5px;
-    }
-    #name {
-        margin-top: 20px;
-    }
+    label {display: block;}
     input[type="radio"] {
         position: relative;
-        top: -26px;
+        top: -19px;
         &:focus {
             background: #132959;
         }
     }
-    #amount {
-        position: relative;
-        margin-top: 10px;
-        margin-left: 28px;
+    #amount5, #amount12 {margin-left: 30px;}
+    #amount5 {margin-top: 60px;}
+    #amount12, .form-row {margin-top: 20px;}
+    #card-element {margin-top: 8px;}
+    #name {margin: 34px 0 11px 0;}
+    #street, #postcode, #city, #email, #password {margin-bottom: 11px;}
+    #country {margin-bottom: 9px;}
+    #unsubscription {
+        text-align: center;
+        font-family: 'Montserrat-Regular', sans-serif;
     }
     input[type="text"], input[type="email"], input[type="password"], select {
         border: none;
@@ -254,7 +274,7 @@ form #subscription {
     input[type="submit"] {
         position: relative;
         display: block;
-        margin-top: 22px;
+        margin: 28px 0 10px 0;
         padding: 10px 30px 10px 30px;
         color: #FFF;
         background: #234CA5;
@@ -264,7 +284,6 @@ form #subscription {
         width: 100%;
         border-radius: 4px;
         border: 2px solid #234CA5;
-        margin-bottom: 10px;
         &:hover {
             cursor: pointer;
             background: #132959;
@@ -288,5 +307,5 @@ form #subscription {
 
 .video h3, figcaption {
     font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat-Light', sans-serif;
 }

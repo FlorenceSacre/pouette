@@ -11,7 +11,7 @@
                         {{--<source src="{{asset($videos->videoHQ)}}" type="video/mp4">--}}
                     {{--</video>--}}
                         <div id="topbar">
-                            <h1 id="logo-florence-sacré"><a href="{{URL('home')}}">e-play</a></h1>
+                            <a href="{{URL('home')}}"><img src="{{asset('images/logo.png')}}" width="80px" /></a>
                         <form action="{{route('video.search')}}" role="search">
                             {{ csrf_field() }}
                             <input type="text" name="q" />
@@ -65,7 +65,7 @@
                     <?php
                         $videos = DB::table('video')->selectRaw('min(id) as id,image')->groupBy('image')->get(); ?>
                         @foreach ($videos as $video)
-                            <a href="{{route('video',['id'=>$video->id])}}"><img src="{{asset($video->image)}}" width="300px" /></a>
+                            <a href="{{route('video',['id'=>$video->id])}}"><img src="{{asset($video->image)}}" width="320px" /></a>
                         @endforeach
                 </section>
             </div><!-- end content -->

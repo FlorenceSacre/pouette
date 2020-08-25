@@ -6,7 +6,7 @@
     <div id="container">
         <header>
             <div id="topbar">
-                <h1 id="logo-florence-sacré"><a href="{{URL('home')}}">e-play</a></h1>
+                <a href="{{URL('home')}}"><img src="{{asset('images/logo.png')}}" width="80px" /></a>
                 <nav>
                     <ul>
                         <li><a href="{{URL('../subscribe')}}">S'abonner</a></li>
@@ -53,7 +53,7 @@
                 <?php
                 $videos = DB::table('video')->where('categorie','animaux')->get(); ?>
                 @foreach ($videos as $video)
-                    <a href="{{route('video',['id'=>$video->id])}}"><img src="{{asset($video->image)}}" width="300px" alt="{{$video->titre}}" /></a>
+                    <a href="{{route('video',['id'=>$video->id])}}"><img src="{{asset($video->image)}}" width="320px" alt="{{$video->titre}}" /></a>
                 @endforeach
             </section>
         </div><!-- end content -->

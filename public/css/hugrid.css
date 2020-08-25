@@ -19,11 +19,11 @@
 
 /* Default Heads-Up Grid Properties - These will be overwritten by the values entered in the document.ready function. */
 #hugrid {
-    width:960px; /* width of webpage */
+    width:1010px; /* width of webpage */
     margin-left:-480px; /* to center the grid, set half of webpage width as negative value */
 }
 #hugrid div {
-    margin-left:85px; /* width of column */
+    margin-left:90px; /* width of column */
     width:25px; /* width of column gutter */
 }
 
@@ -167,6 +167,7 @@
     border-width:0;
     box-shadow:0 0 2px #666;
     outline:0;
+    left: 300px;
     font:bold 11px/100% Arial,sans-serif;
 }
 #hugridUX button#hugridButton::-moz-focus-inner {

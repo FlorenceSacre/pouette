@@ -3,14 +3,14 @@
 /* --------------- Fonts --------------- */
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url("/public/fonts/Montserrat-Thin.ttf") format("truetype");
+  font-family: 'Montserrat-Light';
+  src: url("/public/fonts/Montserrat-Light.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Montserrat-Medium';
+  font-family: 'Montserrat-Regular';
   src: url("/public/fonts/Montserrat-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
@@ -40,6 +40,11 @@ body {
   z-index: 2;
 }
 
+#topbar img {
+  margin-top: 4px;
+  margin-left: 135px;
+}
+
 #topbar nav {
   top: -10px;
   right: 30px;
@@ -52,7 +57,7 @@ body {
   display: block;
   font-size: 18px;
   text-decoration: none;
-  font-family: 'Montserrat-Medium', sans-serif;
+  font-family: 'Montserrat-Regular', sans-serif;
 }
 
 #topbar nav a:hover {
@@ -90,7 +95,7 @@ body {
   display: block;
   font-size: 16px;
   text-decoration: none;
-  font-family: 'Montserrat-Medium', sans-serif;
+  font-family: 'Montserrat-Regular', sans-serif;
 }
 
 .categorie a:hover {
@@ -116,15 +121,15 @@ body {
 
 /* --------------- Home --------------- */
 
-.home section {
+section {
   margin-left: 135px;
 }
 
-.home section img {
+section img {
   margin-bottom: 25px;
 }
 
-.home section img:first-child {
+section img:first-child {
   margin-right: 21px;
 }
 
@@ -137,7 +142,7 @@ body {
   background-color: #457DBB;
   border-radius: 8px;
   font-size: 14px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat-Light', sans-serif;
 }
 
 .form-add #formulaire {
@@ -148,7 +153,7 @@ body {
 .form-add #titre {
   font-size: 18px;
   margin-top: 21px;
-  margin-bottom: 36px;
+  margin-bottom: 35px;
   text-align: center;
 }
 
@@ -156,9 +161,14 @@ body {
   border: none;
 }
 
+.form-add #titre-form {
+  font-size: 18px;
+  font-family: 'Montserrat-Regular', sans-serif;
+}
+
 .form-add label {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 11px;
 }
 
 .form-add #videoBQ {
@@ -193,14 +203,19 @@ body {
   position: absolute;
 }
 
+.form-add input[type="checkbox"]:focus {
+  background: #132959;
+}
+
 .form-add input[type="file"] {
-  margin-top: -1px;
+  margin-top: -2px;
+  font-family: 'Montserrat-Light', sans-serif;
 }
 
 .form-add input[type="submit"] {
   position: relative;
   display: block;
-  margin: 24px 0 10px 0;
+  margin: 25px 0 10px 0;
   padding: 10px 30px 10px 30px;
   color: #FFF;
   background: #234CA5;
@@ -219,48 +234,87 @@ body {
 
 /* --------------- Subscribe --------------- */
 
-form #subscription {
-  max-width: 500px;
-  padding: 10px 20px;
-  margin: 20px auto;
+.form-subscription {
+  max-width: 510px;
+  padding: 14px 20px;
+  margin: 25px auto;
   background-color: #457DBB;
   border-radius: 8px;
+  font-size: 14px;
+  font-family: 'Montserrat-Light', sans-serif;
 }
 
-form #subscription legend {
-  font-size: 22px;
+.form-subscription #subscription {
+  max-width: 490px;
+  margin-left: 10px;
+}
+
+.form-subscription fieldset {
+  margin-top: 19px;
+}
+
+.form-subscription legend {
+  font-size: 18px;
   text-align: center;
+  font-family: 'Montserrat-Regular', sans-serif;
 }
 
-form #subscription label {
+.form-subscription label {
   display: block;
-  margin-bottom: 8px;
-  margin-top: 5px;
 }
 
-form #subscription #name {
-  margin-top: 20px;
-}
-
-form #subscription input[type="radio"] {
+.form-subscription input[type="radio"] {
   position: relative;
-  top: -26px;
+  top: -19px;
 }
 
-form #subscription input[type="radio"]:focus {
+.form-subscription input[type="radio"]:focus {
   background: #132959;
 }
 
-form #subscription #amount {
-  position: relative;
-  margin-top: 10px;
-  margin-left: 28px;
+.form-subscription #amount5,
+.form-subscription #amount12 {
+  margin-left: 30px;
 }
 
-form #subscription input[type="text"],
-form #subscription input[type="email"],
-form #subscription input[type="password"],
-form #subscription select {
+.form-subscription #amount5 {
+  margin-top: 60px;
+}
+
+.form-subscription #amount12,
+.form-subscription .form-row {
+  margin-top: 20px;
+}
+
+.form-subscription #card-element {
+  margin-top: 8px;
+}
+
+.form-subscription #name {
+  margin: 34px 0 11px 0;
+}
+
+.form-subscription #street,
+.form-subscription #postcode,
+.form-subscription #city,
+.form-subscription #email,
+.form-subscription #password {
+  margin-bottom: 11px;
+}
+
+.form-subscription #country {
+  margin-bottom: 9px;
+}
+
+.form-subscription #unsubscription {
+  text-align: center;
+  font-family: 'Montserrat-Regular', sans-serif;
+}
+
+.form-subscription input[type="text"],
+.form-subscription input[type="email"],
+.form-subscription input[type="password"],
+.form-subscription select {
   border: none;
   border-radius: 4px;
   font-size: 15px;
@@ -270,10 +324,10 @@ form #subscription select {
   margin-bottom: 38px;
 }
 
-form #subscription input[type="submit"] {
+.form-subscription input[type="submit"] {
   position: relative;
   display: block;
-  margin-top: 22px;
+  margin: 28px 0 10px 0;
   padding: 10px 30px 10px 30px;
   color: #FFF;
   background: #234CA5;
@@ -283,10 +337,9 @@ form #subscription input[type="submit"] {
   width: 100%;
   border-radius: 4px;
   border: 2px solid #234CA5;
-  margin-bottom: 10px;
 }
 
-form #subscription input[type="submit"]:hover {
+.form-subscription input[type="submit"]:hover {
   cursor: pointer;
   background: #132959;
 }
@@ -310,6 +363,6 @@ form #subscription input[type="submit"]:hover {
 .video h3,
 figcaption {
   font-size: 14px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat-Light', sans-serif;
 }
 
