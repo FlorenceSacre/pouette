@@ -40,6 +40,8 @@
             {!! $links !!}
 
             <a href="{{route('home')}}"><button type="button">Voir le site</button></a>
+            <a href="{{route('upload.video')}}"><button type="button">Ajouter du contenu vidéo</button></a>
+
         </div>
     </div>
 @endsection

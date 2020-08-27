@@ -1,4 +1,19 @@
-/* --------------- Fonts --------------- */
+/* -------------------- Typos -------------------- */
+
+$sizes-bg: 14px;
+
+
+/* -------------------- Colors -------------------- */
+
+$--color-main: #457DBB;
+$--color-secondary: #234CA5;
+$--color-third: #132959;
+$--color-text-primary: #000000;
+$--color-text-secondary: #ffffff;
+$--color-field-form: #8a97a0;
+
+
+/* -------------------- Fonts -------------------- */
 
 @font-face {
     font-family: 'Montserrat-Light';
@@ -14,7 +29,8 @@
     font-style: normal;
 }
 
-/* --------------- Général --------------- */
+
+/* -------------------- Général -------------------- */
 
 body {
     margin: 0;
@@ -25,34 +41,56 @@ body {
     width: 100%;
     min-height: 600px;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: $--color-text-secondary;
 }
+#content {
+    width: 1010px;
+    margin: 0 auto;
+}
+.previous {
+    background-color: $--color-main;
+    border: none;
+    color: $--color-text-secondary;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 50px;
+    &:hover {
+        cursor: pointer;
+        background: $--color-third;
+    }
+}
+.prev-video, .prev-video-sub {margin-top: 11px;}
+.prev-add, .prev-sub {margin: 22px 0 0 134px;}
 
-/* --------------- Topbar & navigation --------------- */
 
+/* -------------------- Topbar & navigation & galerie -------------------- */
 
 #topbar {
-    height: 40px;
-    background-color: #457DBB;
+    height: 50px;
+    background-color: $--color-main;
     width: 100%;
     display: block;
     z-index: 2;
     img {
-        margin-top: 4px;
+        margin-top: 10px;
         margin-left: 135px;
     }
     nav {
-        top: -10px;
+        clear: both;
+        bottom: 31px;
         right: 30px;
         position: relative;
         & a {
-            color: #fff;
+            color: $--color-text-secondary;
             padding: 6px;
             display: block;
             font-size: 18px;
             text-decoration: none;
             font-family: 'Montserrat-Regular', sans-serif;
-            &:hover {color: #132959;}
+            &:hover {color: $--color-third;}
         }
         & ul {
             margin: 0;
@@ -62,31 +100,39 @@ body {
         }
         & li {
             float: left;
-            margin-right: 25px;
+            margin-right: 32px;
             &:last-child {margin-right: 100px;}
         }
     }
 }
+#galerie {
+    width: 103%;
+    margin-top: 22px;
+    img {
+        margin: 0 21px 25px 0;
+    }
+}
 
-/* --------------- Catégorie --------------- */
+
+/* -------------------- Catégorie -------------------- */
 
 .categorie {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     clear: both;
+    margin-top: 200px;
     & a {
-        color: black;
+        color: $--color-text-primary;
         padding: 6px;
         display: block;
         font-size: 16px;
         text-decoration: none;
         font-family: 'Montserrat-Regular', sans-serif;
+        &.active {
+            color: $--color-main;
+        }
         &:hover {
-            color: #ffffff;
-            padding: 10px;
-            background-color: #1995e0;
-            border-radius: 20px;
+            color: $--color-main;
         }
     }
     & ul {
@@ -95,23 +141,20 @@ body {
     }
     & li {
         float: left;
-        margin: 40px 20px 40px 50px;
+        margin: 40px 29px 40px 29px;
         &:first-child {
-            margin-left: 20px;
+            margin-left: 28px;
         }
     }
 }
 
-/* --------------- Home --------------- */
 
-section {
-    margin-left: 135px;
-    img {
-        margin-bottom: 25px;
-    }
-    img:first-child {
-        margin-right: 21px;
-    }
+/* -------------------- Home -------------------- */
+
+.form-search {
+    position: absolute;
+    top: 14px;
+    left: 364px;
 }
 //.home #video-header {
 //  z-index: 100;
@@ -136,23 +179,15 @@ section {
 //  text-align: center;
 //  font-family: 'comfortaaregular', cursive;
 //}
-//.home nav {
-//  position: absolute;
-//  z-index: 20;
-//}
-//.home section {
-//  width: 100%;
-//  text-align: center;
-//}
 
 
-/* --------------- Add form --------------- */
+/* -------------------- Add form -------------------- */
 
 .form-add {
     max-width: 510px;
     padding: 14px 20px;
     margin: 25px auto;
-    background-color: #457DBB;
+    background-color: $--color-main;
     border-radius: 8px;
     font-size: 14px;
     font-family: 'Montserrat-Light', sans-serif;
@@ -188,14 +223,14 @@ section {
         font-size: 15px;
         padding: 10px;
         width: 100%;
-        color: #8a97a0;
+        color: $--color-field-form;
         margin-bottom: 38px;
     }
     input[type="checkbox"] {
         margin-top: 0;
         position: absolute;
         &:focus {
-            background: #132959;
+            background: $--color-third;
         }
     }
     input[type="file"] {
@@ -207,29 +242,29 @@ section {
         display: block;
         margin: 25px 0 10px 0;
         padding: 10px 30px 10px 30px;
-        color: #FFF;
-        background: #234CA5;
+        color: $--color-text-secondary;
+        background: $--color-secondary;
         font-size: 18px;
         text-align: center;
         font-style: normal;
         width: 100%;
         border-radius: 4px;
-        border: 2px solid #234CA5;
+        border: 2px solid $--color-secondary;
         &:hover {
             cursor: pointer;
-            background: #132959;
+            background: $--color-third;
         }
     }
 }
 
 
-/* --------------- Subscribe --------------- */
+/* -------------------- Subscribe -------------------- */
 
 .form-subscription {
     max-width: 510px;
     padding: 14px 20px;
     margin: 25px auto;
-    background-color: #457DBB;
+    background-color: $--color-main;
     border-radius: 8px;
     font-size: 14px;
     font-family: 'Montserrat-Light', sans-serif;
@@ -237,7 +272,7 @@ section {
         max-width: 490px;
         margin-left: 10px;
     }
-    fieldset {margin-top: 19px;}
+    fieldset {margin-top: 21px;}
     legend {
         font-size: 18px;
         text-align: center;
@@ -248,7 +283,7 @@ section {
         position: relative;
         top: -19px;
         &:focus {
-            background: #132959;
+            background: $--color-third;
         }
     }
     #amount5, #amount12 {margin-left: 30px;}
@@ -268,44 +303,136 @@ section {
         font-size: 15px;
         padding: 10px;
         width: 100%;
-        color: #8a97a0;
+        color: $--color-field-form;
         margin-bottom: 38px;
     }
     input[type="submit"] {
         position: relative;
         display: block;
         margin: 28px 0 10px 0;
-        padding: 10px 30px 10px 30px;
-        color: #FFF;
-        background: #234CA5;
+        padding: 10px 30px 11px 30px;
+        color: $--color-text-secondary;
+        background: $--color-secondary;
         font-size: 18px;
         text-align: center;
         font-style: normal;
         width: 100%;
         border-radius: 4px;
-        border: 2px solid #234CA5;
+        border: 2px solid $--color-secondary;
         &:hover {
             cursor: pointer;
-            background: #132959;
+            background: $--color-third;
         }
     }
 }
 
-/* --------------- Paysage --------------- */
 
-.paysage section {
-    margin-left: 135px;
-    img {
-        margin-bottom: 25px;
+/* -------------------- Vidéo -------------------- */
+
+.video {
+    h2 {
+        font-size: 16px;
+        font-family: 'Montserrat-Light', sans-serif;
     }
-    img:first-child {
-        margin-right: 21px;
+    figcaption p {
+        color: $--color-text-secondary;
+        position: absolute;
+        font-size: 14px;
+        top: 37px;
+        left: 158px;
     }
-}
+    h6 {
+        font-size: 12px;
+        font-family: 'Montserrat-Light', sans-serif;
+        color: $--color-secondary;
+    }
+    img.img-preview {
+        position: relative;
+        top: 65px;
+        left: 205px;
+        z-index: -1;
+    }
+    #fig {
+        width: 600px;
+        height: 151px;
+        display: block;
+        position: relative;
+        bottom: 185px;
+        left: 205px;
+        z-index: 1;
+        &:after {
+            content: "";
+            background-color: $--color-text-primary;
+            opacity: 0.5;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index: -1;
+        }
+    }
+    .button-subscribe {
+        position: absolute;
+        right: 231px;
+        bottom: 32px;
+        background-color: $--color-secondary;
+        border: none;
+        color: $--color-text-secondary;
+        padding: 15px 18px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        &:hover {
+            cursor: pointer;
+            background: $--color-third;
+        }
+    }
+    .vid-subscriber {margin: 9px 0 0 90px;}
+    #catvideo {margin-top: 39px;}
+    #titrevideo {margin-top: 10px;}
+    form {margin-top: 19px;}
+    input[type="text"] {
+        width: 345px;
+        height: 30px;
+        border : none;
+        border-bottom  : 2px solid gray;
+    }
+    input[type="submit"] {
+        margin: 28px 0 10px 0;
+        padding: 10px;
+        color: $--color-text-secondary;
+        background: $--color-secondary;
+        font-size: 16px;
+        text-align: center;
+        font-style: normal;
+        width: 13%;
+        border-radius: 4px;
+        border: 2px solid $--color-secondary;
 
-/* --------------- Vidéo --------------- */
-
-.video h3, figcaption {
-    font-size: 14px;
-    font-family: 'Montserrat-Light', sans-serif;
+        &:hover {
+            cursor: pointer;
+            background: $--color-third;
+        }
+    }
+    h3 {
+        font-size: 14px;
+        font-family: 'Montserrat-Regular', sans-serif;
+    }
+    #titrecom {
+        clear: both;
+        margin-top: 84px;
+    }
+    #namecom {
+        font-size: 18px;
+        margin-top: 58px;
+    }
+    #commentaire {
+        margin-top: 35px;
+    }
+    #titresouhait {
+        margin-top: 86px;
+        margin-bottom: 46px;
+    }
 }

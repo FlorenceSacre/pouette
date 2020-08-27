@@ -12,7 +12,8 @@ class VideoController extends Controller
     public function index($id) {
         $v = DB::table('video')->where('id',$id)->first();
         $comvideos = DB::table('comments')->join('users', 'users.id', '=', 'comments.users_id')->where('comments.video_id', $id)->get();
-        return view('video.index',['v'=>$v,'comvideos'=>$comvideos]);
+        $categ = DB::table('video')->where('id',$id)->pluck('categorie')->first();
+        return view('video.index',['v'=>$v,'comvideos'=>$comvideos,'categ'=>$categ]);
     }
     public function search() {
         $q = request()->input('q');

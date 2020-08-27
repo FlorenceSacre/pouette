@@ -1,6 +1,10 @@
 @charset "UTF-8";
 
-/* --------------- Fonts --------------- */
+/* -------------------- Typos -------------------- */
+
+/* -------------------- Colors -------------------- */
+
+/* -------------------- Fonts -------------------- */
 
 @font-face {
   font-family: 'Montserrat-Light';
@@ -16,7 +20,7 @@
   font-style: normal;
 }
 
-/* --------------- Général --------------- */
+/* -------------------- Général -------------------- */
 
 body {
   margin: 0;
@@ -27,13 +31,45 @@ body {
   width: 100%;
   min-height: 600px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 
-/* --------------- Topbar & navigation --------------- */
+#content {
+  width: 1010px;
+  margin: 0 auto;
+}
+
+.previous {
+  background-color: #457DBB;
+  border: none;
+  color: #ffffff;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
+.previous:hover {
+  cursor: pointer;
+  background: #132959;
+}
+
+.prev-video,
+.prev-video-sub {
+  margin-top: 11px;
+}
+
+.prev-add,
+.prev-sub {
+  margin: 22px 0 0 134px;
+}
+
+/* -------------------- Topbar & navigation & galerie -------------------- */
 
 #topbar {
-  height: 40px;
+  height: 50px;
   background-color: #457DBB;
   width: 100%;
   display: block;
@@ -41,18 +77,19 @@ body {
 }
 
 #topbar img {
-  margin-top: 4px;
+  margin-top: 10px;
   margin-left: 135px;
 }
 
 #topbar nav {
-  top: -10px;
+  clear: both;
+  bottom: 31px;
   right: 30px;
   position: relative;
 }
 
 #topbar nav a {
-  color: #fff;
+  color: #ffffff;
   padding: 6px;
   display: block;
   font-size: 18px;
@@ -73,24 +110,33 @@ body {
 
 #topbar nav li {
   float: left;
-  margin-right: 25px;
+  margin-right: 32px;
 }
 
 #topbar nav li:last-child {
   margin-right: 100px;
 }
 
-/* --------------- Catégorie --------------- */
+#galerie {
+  width: 103%;
+  margin-top: 22px;
+}
+
+#galerie img {
+  margin: 0 21px 25px 0;
+}
+
+/* -------------------- Catégorie -------------------- */
 
 .categorie {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   clear: both;
+  margin-top: 200px;
 }
 
 .categorie a {
-  color: black;
+  color: #000000;
   padding: 6px;
   display: block;
   font-size: 16px;
@@ -98,11 +144,12 @@ body {
   font-family: 'Montserrat-Regular', sans-serif;
 }
 
+.categorie a.active {
+  color: #457DBB;
+}
+
 .categorie a:hover {
-  color: #ffffff;
-  padding: 10px;
-  background-color: #1995e0;
-  border-radius: 20px;
+  color: #457DBB;
 }
 
 .categorie ul {
@@ -112,28 +159,22 @@ body {
 
 .categorie li {
   float: left;
-  margin: 40px 20px 40px 50px;
+  margin: 40px 29px 40px 29px;
 }
 
 .categorie li:first-child {
-  margin-left: 20px;
+  margin-left: 28px;
 }
 
-/* --------------- Home --------------- */
+/* -------------------- Home -------------------- */
 
-section {
-  margin-left: 135px;
+.form-search {
+  position: absolute;
+  top: 14px;
+  left: 364px;
 }
 
-section img {
-  margin-bottom: 25px;
-}
-
-section img:first-child {
-  margin-right: 21px;
-}
-
-/* --------------- Add form --------------- */
+/* -------------------- Add form -------------------- */
 
 .form-add {
   max-width: 510px;
@@ -217,7 +258,7 @@ section img:first-child {
   display: block;
   margin: 25px 0 10px 0;
   padding: 10px 30px 10px 30px;
-  color: #FFF;
+  color: #ffffff;
   background: #234CA5;
   font-size: 18px;
   text-align: center;
@@ -232,7 +273,7 @@ section img:first-child {
   background: #132959;
 }
 
-/* --------------- Subscribe --------------- */
+/* -------------------- Subscribe -------------------- */
 
 .form-subscription {
   max-width: 510px;
@@ -250,7 +291,7 @@ section img:first-child {
 }
 
 .form-subscription fieldset {
-  margin-top: 19px;
+  margin-top: 21px;
 }
 
 .form-subscription legend {
@@ -328,8 +369,8 @@ section img:first-child {
   position: relative;
   display: block;
   margin: 28px 0 10px 0;
-  padding: 10px 30px 10px 30px;
-  color: #FFF;
+  padding: 10px 30px 11px 30px;
+  color: #ffffff;
   background: #234CA5;
   font-size: 18px;
   text-align: center;
@@ -344,25 +385,137 @@ section img:first-child {
   background: #132959;
 }
 
-/* --------------- Paysage --------------- */
+/* -------------------- Vidéo -------------------- */
 
-.paysage section {
-  margin-left: 135px;
-}
-
-.paysage section img {
-  margin-bottom: 25px;
-}
-
-.paysage section img:first-child {
-  margin-right: 21px;
-}
-
-/* --------------- Vidéo --------------- */
-
-.video h3,
-figcaption {
-  font-size: 14px;
+.video h2 {
+  font-size: 16px;
   font-family: 'Montserrat-Light', sans-serif;
+}
+
+.video figcaption p {
+  color: #ffffff;
+  position: absolute;
+  font-size: 14px;
+  top: 37px;
+  left: 158px;
+}
+
+.video h6 {
+  font-size: 12px;
+  font-family: 'Montserrat-Light', sans-serif;
+  color: #234CA5;
+}
+
+.video img.img-preview {
+  position: relative;
+  top: 65px;
+  left: 205px;
+  z-index: -1;
+}
+
+.video #fig {
+  width: 600px;
+  height: 151px;
+  display: block;
+  position: relative;
+  bottom: 185px;
+  left: 205px;
+  z-index: 1;
+}
+
+.video #fig:after {
+  content: "";
+  background-color: #000000;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.video .button-subscribe {
+  position: absolute;
+  right: 231px;
+  bottom: 32px;
+  background-color: #234CA5;
+  border: none;
+  color: #ffffff;
+  padding: 15px 18px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.video .button-subscribe:hover {
+  cursor: pointer;
+  background: #132959;
+}
+
+.video .vid-subscriber {
+  margin: 9px 0 0 90px;
+}
+
+.video #catvideo {
+  margin-top: 39px;
+}
+
+.video #titrevideo {
+  margin-top: 10px;
+}
+
+.video form {
+  margin-top: 19px;
+}
+
+.video input[type="text"] {
+  width: 345px;
+  height: 30px;
+  border: none;
+  border-bottom: 2px solid gray;
+}
+
+.video input[type="submit"] {
+  margin: 28px 0 10px 0;
+  padding: 10px;
+  color: #ffffff;
+  background: #234CA5;
+  font-size: 16px;
+  text-align: center;
+  font-style: normal;
+  width: 13%;
+  border-radius: 4px;
+  border: 2px solid #234CA5;
+}
+
+.video input[type="submit"]:hover {
+  cursor: pointer;
+  background: #132959;
+}
+
+.video h3 {
+  font-size: 14px;
+  font-family: 'Montserrat-Regular', sans-serif;
+}
+
+.video #titrecom {
+  clear: both;
+  margin-top: 84px;
+}
+
+.video #namecom {
+  font-size: 18px;
+  margin-top: 58px;
+}
+
+.video #commentaire {
+  margin-top: 35px;
+}
+
+.video #titresouhait {
+  margin-top: 86px;
+  margin-bottom: 46px;
 }
 

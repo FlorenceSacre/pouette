@@ -44,4 +44,5 @@
             <input type="submit" value="Envoyer" />
         </div>
     </form>
+    <a href="<?php echo $_SERVER["HTTP_REFERER"]; ?>"><button type="button" class="previous prev-add">Retour à la page précédente</button></a>
 @endsection

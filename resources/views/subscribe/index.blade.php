@@ -68,6 +68,8 @@
             <input type="submit" value="S'abonner" />
         </div>
     </form>
+    <a href="<?php echo $_SERVER["HTTP_REFERER"]; ?>"><button type="button" class="previous prev-sub">Retour à la page précédente</button></a>
+
 
     <script src="https://js.stripe.com/v3/"></script>
     <script>

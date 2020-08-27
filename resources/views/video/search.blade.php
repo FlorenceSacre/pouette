@@ -6,7 +6,7 @@
     <div id="container">
         <header>
             <div id="topbar">
-                <!--<h1 id="logo-florence-sacré"><a href="index.html">Florence Sacré</a></h1>-->
+                <a href="{{URL('home')}}"><img src="{{asset('images/logo.png')}}" width="80px" /></a>
                 <form action="{{route('video.search')}}" role="search">
                     {{ csrf_field() }}
                     <input type="text" name="q" value="{{request()->q ?? ''}}" />
@@ -53,7 +53,6 @@
                 <ul>
                     <li><a href="{{URL('paysage')}}">Voyage</a></li>
                     <li><a href="{{URL('animaux')}}">Animaux</a></li>
-                    <li><a href="{{URL('urbex')}}">Urbex</a></li>
                     <li><a href="{{URL('hiver')}}">Hiver</a></li>
                 </ul>
             </nav>
@@ -62,7 +61,7 @@
                     <?php
                     $videos = DB::table('video')->where('titre', 'LIKE', '%' . $q . '%')->get(); ?>
                     @foreach ($videos as $video)
-                        <a href='{{route('video',['id'=>$video->id])}}'><img src="{{asset($video->image)}}" width="300px" /></a>
+                        <a href='{{route('video',['id'=>$video->id])}}'><img src="{{asset($video->image)}}" width="320px" /></a>
                     @endforeach
                 @endif
             </section>

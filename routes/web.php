@@ -52,10 +52,6 @@ Route::get('/unsubscription/{token}', 'UnsubscriptionController');
 
 Route::post('login', 'Auth\LoginController@login');
 
-//Route::get('admin', function() {
-//    return view('admin.index');
-//});
-
 Route::get('video/{id}', 'VideoController@index')->name('video');
 Route::post('video/{id}', 'VideoController@storeCom');
 

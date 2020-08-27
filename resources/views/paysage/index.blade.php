@@ -44,12 +44,12 @@
         <div id="content">
             <nav class="categorie">
                 <ul>
-                    <li><a href="{{URL('paysage')}}">Paysage</a></li>
+                    <li><a href="{{URL('paysage')}}" class="active">Paysage</a></li>
                     <li><a href="{{URL('animaux')}}">Animaux</a></li>
                     <li><a href="{{URL('hiver')}}">Hiver</a></li>
                 </ul>
             </nav>
-            <section>
+            <section id="galerie">
                 <?php
                 $videos = DB::table('video')->where('categorie','paysage')->get(); ?>
                 @foreach ($videos as $video)
