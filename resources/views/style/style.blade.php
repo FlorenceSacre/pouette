@@ -32,16 +32,16 @@
     gutterwidth = 25;
     pagetopmargin = 0;
     rowheight = 25;
-    gridonload = 'off';
+    gridonload = 'on';
     makehugrid();
     }
     if (browserWidth <= 768)
     {
     pageUnits = 'px';
     colUnits = 'px';
-    pagewidth = 605;
+    pagewidth = 665;
     columns = 6;
-    columnwidth = 80;
+    columnwidth = 90;
     gutterwidth = 25;
     pagetopmargin = 0;
     rowheight = 25;
@@ -73,18 +73,6 @@
     </script>
 </head>
 <body>
-{{--@if(!empty($errors))--}}
-{{--@if($errors->any())--}}
-{{--<ul class="alert alert-danger" style="list-style-type: none">--}}
-{{--@foreach($errors->all() as $error)--}}
-{{--<li>{!! $error !!}</li>--}}
-{{--@endforeach--}}
-{{--</ul>--}}
-{{--@endif--}}
-{{--@endif--}}
 @yield('content')
-@if(request()->input('q'))
-    <h4>{{$videos->count()}} résultat(s) pour la recherche "{{request()->q}}"</h4>
-@endif
 </body>
 </html>

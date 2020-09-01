@@ -1,6 +1,4 @@
-/* -------------------- Typos -------------------- */
-
-$sizes-bg: 14px;
+@import url('/public/css/reset.css');
 
 
 /* -------------------- Colors -------------------- */
@@ -35,18 +33,36 @@ $--color-field-form: #8a97a0;
 body {
     margin: 0;
     padding: 0;
+    #container {
+        width: 100%;
+        min-height: 600px;
+        margin: 0 auto;
+        background-color: $--color-text-secondary;
+        .image-header {
+            position: relative;
+            bottom: 20px;
+            height: 396px;
+            width: 100%;
+            overflow: hidden;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+        #content {
+            width: 1010px;
+            margin: 0 auto;
+            h2 {
+                font-size: 16px;
+                font-family: 'Montserrat-Light', sans-serif;
+            }
+            h6 {
+                font-size: 12px;
+                font-family: 'Montserrat-Light', sans-serif;
+                color: $--color-secondary;
+            }
+        }
+    }
 }
 
-#container {
-    width: 100%;
-    min-height: 600px;
-    margin: 0 auto;
-    background-color: $--color-text-secondary;
-}
-#content {
-    width: 1010px;
-    margin: 0 auto;
-}
 .previous {
     background-color: $--color-main;
     border: none;
@@ -62,8 +78,9 @@ body {
         background: $--color-third;
     }
 }
-.prev-video, .prev-video-sub {margin-top: 11px;}
-.prev-add, .prev-sub {margin: 22px 0 0 134px;}
+.prev-video {margin-top: 36px;}
+.prev-video-sub {margin-top: 41px;}
+.prev-add, .prev-sub {margin: 22px 0 50px 134px;}
 
 
 /* -------------------- Topbar & navigation & galerie -------------------- */
@@ -73,16 +90,23 @@ body {
     background-color: $--color-main;
     width: 100%;
     display: block;
-    z-index: 2;
-    img {
-        margin-top: 10px;
-        margin-left: 135px;
-    }
+    z-index: 20;
+    position: fixed;
+    img {margin: 10px 0 0 135px;}
     nav {
         clear: both;
         bottom: 31px;
-        right: 30px;
+        right: 28px;
         position: relative;
+        .nav-logout {cursor: pointer;}
+        .nav-name {
+            color: $--color-text-secondary;
+            padding: 6px;
+            display: block;
+            font-size: 18px;
+            text-decoration: none;
+            font-family: 'Montserrat-Regular', sans-serif;
+        }
         & a {
             color: $--color-text-secondary;
             padding: 6px;
@@ -116,11 +140,11 @@ body {
 
 /* -------------------- Catégorie -------------------- */
 
-.categorie {
+.navcategorie {
     display: flex;
     justify-content: center;
     clear: both;
-    margin-top: 200px;
+    margin-top: -5px;
     & a {
         color: $--color-text-primary;
         padding: 6px;
@@ -149,37 +173,98 @@ body {
 }
 
 
-/* -------------------- Home -------------------- */
+/* -------------------- Login -------------------- */
 
-.form-search {
-    position: absolute;
-    top: 14px;
-    left: 364px;
+#login-form {
+    max-width: 510px;
+    padding: 14px 20px;
+    margin: 25px auto;
+    background-color: $--color-main;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Montserrat-Light', sans-serif;
+    #form-login {
+        max-width: 490px;
+        margin-left: 10px;
+    }
+    fieldset {margin-top: 21px;}
+    legend {
+        font-size: 18px;
+        text-align: center;
+        font-family: 'Montserrat-Regular', sans-serif;
+    }
+    label {
+        display: block;
+        margin-bottom: 11px;
+    }
+    .email-login {
+        margin-top: 35px;
+    }
+    input[type="email"], input[type="password"] {
+        border: none;
+        border-radius: 4px;
+        font-size: 15px;
+        padding: 10px;
+        width: 100%;
+        color: $--color-field-form;
+        margin-bottom: 38px;
+    }
+    button {
+        position: relative;
+        display: block;
+        margin: 16px 0 10px 0;
+        padding: 10px 30px 11px 30px;
+        color: $--color-text-secondary;
+        background: $--color-secondary;
+        font-size: 18px;
+        text-align: center;
+        font-style: normal;
+        width: 100%;
+        border-radius: 4px;
+        border: 2px solid $--color-secondary;
+        &:hover {
+            cursor: pointer;
+            background: $--color-third;
+        }
+    }
+    input:focus:invalid {
+        box-shadow: 0 0 5px 1px red;
+    }
 }
-//.home #video-header {
-//  z-index: 100;
-//}
-//video {
-//  min-width: 100%;
-//  min-height: 150%;
-//}
-//.home h2 {
-//  position: absolute;
-//  z-index: 20;
-//  top: 8px;
-//  color: #fff;
-//  text-align: center;
-//  font-family: 'Merriweather', sans-serif;
-//}
-//.home h3 {
-//  position: absolute;
-//  z-index: 20;
-//  top: 150px;
-//  color: #fff;
-//  text-align: center;
-//  font-family: 'comfortaaregular', cursive;
-//}
 
+
+/* -------------------- Hiver -------------------- */
+
+.img-home {
+    background-image: url('/images/yellowstone.jpg');
+    background-position: center;
+    #slogan {
+        position: absolute;
+        top: 203px;
+        left: 327px;
+        z-index: 2;
+        color: #ffffff;
+        font-family: 'Montserrat-Light', sans-serif;
+        font-size: 20px;
+        overflow: hidden;
+    }
+}
+.img-paysage {
+    background-image: url('/images/landscape.jpg');
+    background-position: center;
+}
+.img-animaux {
+    background-image: url('/images/hedgehog.jpg');
+    background-position: center bottom;
+}
+.img-hiver {
+    background-image: url('/images/Snow.jpg');
+    background-position: center center;
+}
+.img-search {
+    background-image: url('/images/writing.jpg');
+    background-position: bottom right;
+}
 
 /* -------------------- Add form -------------------- */
 
@@ -210,12 +295,20 @@ body {
         display: block;
         margin-bottom: 11px;
     }
-    #videoBQ {margin-top: 36px;}
-    #videoHQ {margin-top: 30px;}
+    #choixcategorie {
+        margin-bottom: 24px;
+    }
+    #videoBQ {margin-top: 12px;}
+    #videoHQ {margin-top: 31px;}
     #image {margin-top: 31px;}
     #categorie {
         position: relative;
-        margin: 11px 0 0 28px;
+        margin: 12px 0 0 10px;
+    }
+    .cat-paysage, .cat-animaux, .cat-hiver {
+        position: relative;
+        bottom: 13px;
+        left: 40px;
     }
     input[type="text"] {
         border: none;
@@ -240,7 +333,7 @@ body {
     input[type="submit"] {
         position: relative;
         display: block;
-        margin: 25px 0 10px 0;
+        margin: 24px 0 10px 0;
         padding: 10px 30px 10px 30px;
         color: $--color-text-secondary;
         background: $--color-secondary;
@@ -297,7 +390,7 @@ body {
         text-align: center;
         font-family: 'Montserrat-Regular', sans-serif;
     }
-    input[type="text"], input[type="email"], input[type="password"], select {
+    input[type="text"], input[type="number"], input[type="email"], input[type="password"], select {
         border: none;
         border-radius: 4px;
         font-size: 15px;
@@ -324,41 +417,34 @@ body {
             background: $--color-third;
         }
     }
+    input:focus:invalid {
+        box-shadow: 0 0 5px 1px red;
+    }
 }
 
 
 /* -------------------- Vidéo -------------------- */
 
 .video {
-    h2 {
-        font-size: 16px;
-        font-family: 'Montserrat-Light', sans-serif;
-    }
     figcaption p {
         color: $--color-text-secondary;
         position: absolute;
-        font-size: 14px;
+        font-size: 16px;
         top: 37px;
-        left: 158px;
-    }
-    h6 {
-        font-size: 12px;
-        font-family: 'Montserrat-Light', sans-serif;
-        color: $--color-secondary;
+        left: 184px;
     }
     img.img-preview {
         position: relative;
-        top: 65px;
-        left: 205px;
-        z-index: -1;
+        top: 115px;
+        left: 206px;
     }
     #fig {
         width: 600px;
         height: 151px;
         display: block;
         position: relative;
-        bottom: 185px;
-        left: 205px;
+        bottom: 110px;
+        left: 206px;
         z-index: 1;
         &:after {
             content: "";
@@ -389,8 +475,8 @@ body {
             background: $--color-third;
         }
     }
-    .vid-subscriber {margin: 9px 0 0 90px;}
-    #catvideo {margin-top: 39px;}
+    .vid-subscriber {margin: 108px 0 0 90px;}
+    #catvideo {margin-top: 40px;}
     #titrevideo {margin-top: 10px;}
     form {margin-top: 19px;}
     input[type="text"] {
@@ -435,4 +521,45 @@ body {
         margin-top: 86px;
         margin-bottom: 46px;
     }
+}
+
+
+/* -------------------- Search -------------------- */
+
+.form-search {
+    position: absolute;
+    top: 14px;
+    left: 310px;
+    .input-text {
+        width: 257px;
+    }
+    .search-input {
+        width: 20px;
+        height: 20px;
+    }
+}
+#result-search {
+    margin: 13px 0 43px 0;
+}
+#galerie-search {
+    float: left;
+    margin-right: 25px;
+    .search-img {
+        margin-bottom: 20px;
+    }
+    #search-cat {
+        clear: both;
+        text-align: center;
+    }
+    #search-titre {
+        margin: 10px 0 50px 0;
+        text-align: center;
+    }
+}
+
+
+/* -------------------- SubscriptionOk -------------------- */
+
+.abonnement-complet {
+    margin: 37px 0 19px 0;
 }

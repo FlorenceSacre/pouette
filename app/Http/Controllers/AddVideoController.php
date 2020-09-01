@@ -43,5 +43,6 @@ class AddVideoController extends Controller
                 }
             }
         }
+        return view('addNewFile');
     }
 }

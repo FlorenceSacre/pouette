@@ -2,5 +2,5 @@
 
 @section('content')
     <p>La vidéo a bien été ajoutée</p>
-    <button type="button">Retour</button>
+    <a href="{{route('home')}}"><button type="button" class="previous prev-sub">Aller sur le site</button></a>
 @endsection

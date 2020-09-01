@@ -78,14 +78,6 @@ class VideoTableSeeder extends Seeder
         ]);
         Video::create([
             'id' => '9',
-            'titre' => 'Hérisson',
-            'categorie' => 'Animaux',
-            'videoBQ' => 'storage/app/public/videos/HedgehogBQ.mp4',
-            'videoHQ' => 'storage/app/public/videos/HedgehogHQ.mp4',
-            'image' => 'storage/app/public/images/Hedgehog.png',
-        ]);
-        Video::create([
-            'id' => '10',
             'titre' => 'Chevreuil',
             'categorie' => 'Animaux',
             'videoBQ' => 'storage/app/public/videos/Roe_DeerBQ.mp4',
@@ -93,7 +85,7 @@ class VideoTableSeeder extends Seeder
             'image' => 'storage/app/public/images/Roe_Deer.png',
         ]);
         Video::create([
-            'id' => '11',
+            'id' => '10',
             'titre' => 'Husky',
             'categorie' => 'Animaux',
             'videoBQ' => 'storage/app/public/videos/HuskyBQ.mp4',
@@ -101,7 +93,7 @@ class VideoTableSeeder extends Seeder
             'image' => 'storage/app/public/images/Husky.png',
         ]);
         Video::create([
-            'id' => '12',
+            'id' => '11',
             'titre' => 'Poissons',
             'categorie' => 'Animaux',
             'videoBQ' => 'storage/app/public/videos/SeaBQ.mp4',
@@ -109,7 +101,7 @@ class VideoTableSeeder extends Seeder
             'image' => 'storage/app/public/images/Sea.png',
         ]);
         Video::create([
-            'id' => '13',
+            'id' => '12',
             'titre' => 'Rennes',
             'categorie' => 'Animaux',
             'videoBQ' => 'storage/app/public/videos/ReindeerBQ.mp4',
@@ -117,7 +109,7 @@ class VideoTableSeeder extends Seeder
             'image' => 'storage/app/public/images/Reindeer.png',
         ]);
         Video::create([
-            'id' => '14',
+            'id' => '13',
             'titre' => 'Tortue',
             'categorie' => 'Animaux',
             'videoBQ' => 'storage/app/public/videos/TurtleBQ.mp4',
@@ -125,12 +117,20 @@ class VideoTableSeeder extends Seeder
             'image' => 'storage/app/public/images/Turtle.png',
         ]);
         Video::create([
-            'id' => '15',
+            'id' => '14',
             'titre' => 'Oiseau',
             'categorie' => 'Animaux',
             'videoBQ' => 'storage/app/public/videos/BirdBQ.mp4',
             'videoHQ' => 'storage/app/public/videos/BirdHQ.mp4',
             'image' => 'storage/app/public/images/Bird.png',
+        ]);
+        Video::create([
+            'id' => '15',
+            'titre' => 'Hérisson',
+            'categorie' => 'Animaux',
+            'videoBQ' => 'storage/app/public/videos/HedgehogBQ.mp4',
+            'videoHQ' => 'storage/app/public/videos/HedgehogHQ.mp4',
+            'image' => 'storage/app/public/images/Hedgehog.png',
         ]);
         Video::create([
             'id' => '16',

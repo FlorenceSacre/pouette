@@ -10,36 +10,36 @@
             </fieldset>
             <div>
                 <label for="titre">Titre</label>
-                <input type="text" name="titre" value="{{old('titre')}}" placeholder="Titre">
+                <input type="text" name="titre" value="{{old('titre')}}" placeholder="Titre" required />
             </div>
             <div>
                 <fieldset>
-                    <legend>Choisir la ou les catégories de la vidéo</legend>
+                    <legend id="choixcategorie">Choisir la ou les catégories de la vidéo</legend>
                     <div>
-                        <input type="checkbox" id="paysage" name="categorie[]" value="voyage" />
-                        <label for="categorie[]" id="categorie">Paysage</label>
+                        <input type="checkbox" id="categorie" name="categorie[]" value="paysage" />
+                        <label for="categorie" class="cat-paysage">Paysage</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="animaux" name="categorie[]" value="animaux" />
-                        <label for="categorie[]" id="categorie">Animaux</label>
+                        <input type="checkbox" id="categorie" name="categorie[]" value="animaux" />
+                        <label for="categorie" class="cat-animaux">Animaux</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="hiver" name="categorie[]" value="hiver" />
-                        <label for="categorie[]" id="categorie">Hiver</label>
+                        <input type="checkbox" id="categorie" name="categorie[]" value="hiver" />
+                        <label for="categorie" class="cat-hiver">Hiver</label>
                     </div>
                 </fieldset>
             </div>
             <div>
                 <label for="videoBQ" id="videoBQ">Ajouter une vidéo de basse qualité</label>
-                <input type="file" name="videoBQ" />
+                <input type="file" name="videoBQ" required  />
             </div>
             <div>
                 <label for="videoHQ" id="videoHQ">Ajouter une vidéo de haute qualité</label>
-                <input type="file" name="videoHQ" />
+                <input type="file" name="videoHQ" required />
             </div>
             <div>
                 <label for="image" id="image">Ajouter une image miniature</label>
-                <input type="file" name="image" />
+                <input type="file" name="image" required />
             </div>
             <input type="submit" value="Envoyer" />
         </div>

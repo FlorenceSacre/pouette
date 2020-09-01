@@ -2,17 +2,15 @@
 @extends('style.style')
 
 @section('content')
-    <body class="index">
+    <body class="search">
     <div id="container">
         <header>
             <div id="topbar">
                 <a href="{{URL('home')}}"><img src="{{asset('images/logo.png')}}" width="80px" /></a>
-                <form action="{{route('video.search')}}" role="search">
+                <form action="{{route('video.search')}}" role="search" class="form-search">
                     {{ csrf_field() }}
-                    <input type="text" name="q" value="{{request()->q ?? ''}}" />
-                    <button type="submit">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
+                    <input type="text" class="input-text" name="q" value="{{request()->q ?? ''}}" />
+                    <input type="image" src="{{asset("/images/search.png")}}" class="search-input" />
                 </form>
                 <nav>
                     <ul>
@@ -44,27 +42,30 @@
                     </ul>
                 </nav>
             </div>
-            <div id="img-header">
-                <h2>Vidéos</h2>
-            </div><!-- end img-header -->
+            <div class="image-header img-search"></div>
         </header>
         <div id="content">
-            <nav class="categorie">
+            <nav class="navcategorie">
                 <ul>
-                    <li><a href="{{URL('paysage')}}">Voyage</a></li>
+                    <li><a href="{{URL('paysage')}}">Paysage</a></li>
                     <li><a href="{{URL('animaux')}}">Animaux</a></li>
                     <li><a href="{{URL('hiver')}}">Hiver</a></li>
                 </ul>
             </nav>
-            <section>
-                @if(!Auth::user())
-                    <?php
-                    $videos = DB::table('video')->where('titre', 'LIKE', '%' . $q . '%')->get(); ?>
-                    @foreach ($videos as $video)
-                        <a href='{{route('video',['id'=>$video->id])}}'><img src="{{asset($video->image)}}" width="320px" /></a>
-                    @endforeach
-                @endif
-            </section>
+
+                     @if(request()->input('q'))
+                         <?php
+                         $videos = DB::table('video')->where('titre', 'LIKE', '%' . $q . '%')->get(); ?>
+                         <h3 id="result-search">{{$videos->count()}} résultat(s) pour la recherche "{{request()->q}}"</h3>
+                         @foreach ($videos as $video)
+                                 <section id="galerie-search">
+                             <a href='{{route('video',['id'=>$video->id])}}'><img src="{{asset($video->image)}}" width="320px" class="search-img" /></a>
+                             <h6 id="search-cat">{{$video->categorie}}</h6>
+                             <h3 id="search-titre">{{$video->titre}}</h3>
+                                 </section>
+                         @endforeach
+                     @endif
+
         </div><!-- end content -->
     </div><!-- end container -->
     </body>

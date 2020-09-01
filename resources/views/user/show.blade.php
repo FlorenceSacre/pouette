@@ -10,7 +10,7 @@
                 <p>Adresse : {{ $user->street }}</p>
                 <p>Code postal : {{ $user->postcode }}</p>
                 <p>Ville : {{ $user->city }}</p>
-                <p>Pays : {{ $user->country_id }}</p>
+                <p>Pays : {{$pays->name}}</p>
                 <p>Email : {{ $user->email }}</p>
                 <p>Role : {{ $user->role }}</p>
                 @if($user->admin == 1)

@@ -2,11 +2,11 @@
 @extends('style.style')
 
 @section('content')
-    <body class="index">
+    <body class="subscriptionOk">
     <div id="container">
         <div id="content">
-            <p>Votre abonnement est complet</p>
-            <a href="{{route('home')}}"><button type="button">Retour à la page home</button></a>
+            <p class="abonnement-complet">Votre abonnement est complet</p>
+            <a href="{{route('login')}}"><button type="button" class="previous">Vous pouvez vous connecter</button></a>
         </div><!-- end content -->
     </div><!-- end container -->
     </body>

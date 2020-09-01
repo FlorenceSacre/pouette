@@ -13,7 +13,7 @@
             </label>
             <input type="radio" name="amount" value="5" id="5" required {{old('amount') === '5' ? 'checked' : ''}} />
             <label for="12" id="amount12">
-                <span>12€/mois (meilleure qualité vidéo)</span>
+                <span>12€/mois (plus de vidéos et de meilleure qualité)</span>
             </label>
             <input type="radio" name="amount" value="12" id="12" required {{old('amount') === '12' ? 'checked' : ''}} />
             <div class="form-row">
@@ -28,36 +28,43 @@
                 <div>
                     <div>
                         <label for="name" id="name">Nom</label>
-                        <input type="text" name="name" value="{{old('name')}}" placeholder="Nom prénom">
+                        <input type="text" name="name" value="{{old('name')}}" placeholder="Nom prénom" required />
                     </div>
                     <div>
                         <label for="street" id="street">Adresse de facturation</label>
-                        <input type="text" name="street" value="{{old('street')}}" placeholder="42 rue de la Comté" />
+                        <input type="text" name="street" value="{{old('street')}}" placeholder="42 rue de la Comté" required />
                     </div>
                     <div>
                         <label for="postcode" id="postcode">Code postal</label>
-                        <input type="text" name="postcode" value="{{old('postcode')}}" placeholder="5000" />
+                        <input type="number" name="postcode" value="{{old('postcode')}}" placeholder="5000" required pattern="^[a-zA-Z]" />
                     </div>
                     <div>
                         <label for="city" id="city">Ville</label>
-                        <input type="text" name="city" value="{{old('city')}}" placeholder="Namur" />
+                        <input type="text" name="city" value="{{old('city')}}" placeholder="Namur" required />
                     </div>
                     <div>
                         <label for="country" id="country">Pays</label>
-                        <select name="country">
-                            <option value="1">Belgique</option>
-                            <option value="2">Italie</option>
-                            <option value="3">Espagne</option>
-                            <option value="4">Portugal</option>
+                        <select name="country" required>
+                            <option value="">--Choisi un pays--</option>
+                            <option value="1">Allemagne</option>
+                            <option value="2">Autriche</option>
+                            <option value="3">Belgique</option>
+                            <option value="4">Croatie</option>
+                            <option value="5">Espagne</option>
+                            <option value="6">Finlande</option>
+                            <option value="7">Grèce</option>
+                            <option value="8">Irlande</option>
+                            <option value="9">Italie</option>
+                            <option value="10">Portugal</option>
                         </select>
                     </div>
                     <div>
                         <label for="email" id="email">Email</label>
-                        <input type="email" name="email" value="{{old('email')}}" placeholder="exemple@exemple.org" />
+                        <input type="email" name="email" value="{{old('email')}}" placeholder="exemple@exemple.org" required />
                     </div>
                     <div>
                         <label for="password" id="password">Mot de passe</label>
-                        <input type="password" name="password" value="{{old('password')}}" placeholder="" />
+                        <input type="password" name="password" value="{{old('password')}}" placeholder="" required />
                     </div>
                     <div>
                         <p id="unsubscription">Annulable à tout moment en un clic</p>

@@ -15,11 +15,12 @@ Auth::routes();
 Auth::routes(['register' => false]);
 
 Route::get('/', function () {
-	$user = Auth::user();
-    var_dump($user);
+    echo 'Page 404, vous vous êtes trompé de chemin';
 });
 
-Route::get('/yolo', function () {
+Route::post('login', 'Auth\LoginController@login');
+
+Route::get('/loginbloque', function () {
 	$user = App\User::find(1);
     $user->password = "admin";
     $user->save();
@@ -31,11 +32,11 @@ Route::get('/yolo', function () {
     $user->save();
 });
 
-Route::get('/logout', function () {
-    Auth::logout();
-    var_dump("Logout.");
-});
 
+//Route::post('/logout', function () {
+//    Auth::logout();
+//});
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('home', 'HomeController@index')->name('home');
 
@@ -43,23 +44,18 @@ Route::get('paysage', function() {return view('paysage.index');});
 Route::get('animaux', function() {return view('animaux.index');});
 Route::get('hiver', function() {return view('hiver.index');});
 
-Route::resource('/user', 'UserController');
-
 Route::get('/subscribe', function() {return view('subscribe.index');});
 Route::post('/subscription', 'SubscriptionController');
 Route::get('emails.new-subscribe');
 Route::get('/unsubscription/{token}', 'UnsubscriptionController');
 
-Route::post('login', 'Auth\LoginController@login');
-
 Route::get('video/{id}', 'VideoController@index')->name('video');
 Route::post('video/{id}', 'VideoController@storeCom');
 
-Route::get('add', 'AddVideoController@showUploadForm')->name('upload.video');
-Route::post('add', 'AddVideoController@storeFile');
-
 Route::get('/search','VideoController@search')->name('video.search');
 
-//Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']], function () {
-//    Route::get('/user', 'UserController@index')->name('user');
-//});
+Route::group(['middleware'=>['admin']], function () {
+    Route::resource('/user', 'UserController');
+    Route::get('add', 'AddVideoController@showUploadForm')->name('upload.video');
+    Route::post('add', 'AddVideoController@storeFile');
+});

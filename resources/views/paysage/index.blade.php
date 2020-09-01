@@ -7,42 +7,40 @@
         <header>
             <div id="topbar">
                 <a href="{{URL('home')}}"><img src="{{asset('images/logo.png')}}" width="80px" /></a>
+                <form action="{{route('video.search')}}" role="search" class="form-search">
+                    {{ csrf_field() }}
+                    <input type="text" class="input-text" name="q" value="{{request()->q ?? ''}}" />
+                    <input type="image" src="{{asset("/images/search.png")}}" class="search-input" />
+                </form>
                 <nav>
                     <ul>
                         <li><a href="{{URL('../subscribe')}}">S'abonner</a></li>
-                        <li><a href="{{URL('../login')}}">Connexion</a></li>
                         @if(Auth::user())
-                            {{--<li><a href="{{route('logout')}}">@php $user = Auth::user()->name;--}}
-                            {{--echo $user; @endphp</a></li>--}}
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                            <li class="nav-logout">
+                                <a onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                    {{ __('Déconnexion') }}
                                 </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
                             </li>
                         @else
-                            <li><a>@php echo 'Visiteur'; @endphp</a></li>
+                            <li><a href="{{URL('../login')}}">Connexion</a></li>
+                        @endif
+                        @if(Auth::user())
+                            <li class="nav-name">@php $user = Auth::user()->name;
+                                echo $user; @endphp</li>
+                        @else
+                            <li class="nav-name">@php echo 'Visiteur'; @endphp</li>
                         @endif
                     </ul>
                 </nav>
             </div>
-            <div id="img-header">
-                <h2>Vidéos</h2>
-            </div><!-- end img-header -->
+            <div class="image-header img-paysage"></div>
         </header>
         <div id="content">
-            <nav class="categorie">
+            <nav class="navcategorie">
                 <ul>
                     <li><a href="{{URL('paysage')}}" class="active">Paysage</a></li>
                     <li><a href="{{URL('animaux')}}">Animaux</a></li>
@@ -50,11 +48,27 @@
                 </ul>
             </nav>
             <section id="galerie">
-                <?php
-                $videos = DB::table('video')->where('categorie','paysage')->get(); ?>
-                @foreach ($videos as $video)
-                    <a href="{{route('video',['id'=>$video->id])}}"><img src="{{asset($video->image)}}" width="320px" alt="{{$video->titre}}" /></a>
-                @endforeach
+                @if(!Auth::user())
+                    <?php
+                    $videos = DB::table('video')->where('categorie','paysage')->get(); ?>
+                    @foreach ($videos as $video)
+                        <a href="{{route('video',['id'=>$video->id])}}"><img src="{{asset($video->image)}}" width="320px" alt="{{$video->titre}}" /></a>
+                    @endforeach
+                @endif
+                @can('isSubscriber')
+                    <?php
+                    $videos = DB::table('video')->where('categorie','paysage')->take(6)->get(); ?>
+                    @foreach ($videos as $video)
+                        <a href="{{route('video',['id'=>$video->id])}}"><img src="{{asset($video->image)}}" width="320px" alt="{{$video->titre}}" /></a>
+                    @endforeach
+                @endcan
+                @can('isSubscriberUnlimited')
+                    <?php
+                    $videos = DB::table('video')->where('categorie','paysage')->get(); ?>
+                    @foreach ($videos as $video)
+                        <a href="{{route('video',['id'=>$video->id])}}"><img src="{{asset($video->image)}}" width="320px" alt="{{$video->titre}}" /></a>
+                    @endforeach
+                @endcan
             </section>
         </div><!-- end content -->
     </div><!-- end container -->

@@ -7,7 +7,8 @@
             <div class="panel-heading">Modification d'un utilisateur</div>
             <div class="panel-body">
                 <div class="col-sm-12">
-                    {!! Form::model($user, ['route' => ['user', $user->id], 'method' => 'put', 'class' => 'form-horizontal panel']) !!}
+                    {!! Form::model($user, ['route' => ['user.update', $user->id], 'method' => 'put', 'class' => 'form-horizontal panel']) !!}
+                    <label>Nom et prénom</label>
                     <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!}">
                         {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nom Prénom']) !!}
                         {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
@@ -29,32 +30,37 @@
                     </div>
                     <label>Pays</label>
                     <div class="form-group">
-                        <div class="checkbox">
+                        <div class="radio">
                             <label>
-                                {!! Form::checkbox('belgique', 1, null) !!} Belgique<br />
-                                {!! Form::checkbox('italie', 2, null) !!} Italie<br />
-                                {!! Form::checkbox('espagne', 3, null) !!} Espagne<br />
-                                {!! Form::checkbox('portugal', 4, null) !!} Portugal
+                                {!! Form::radio('pays', 1, true) !!} Allemagne<br />
+                                {!! Form::radio('pays', 2, false) !!} Autriche<br />
+                                {!! Form::radio('pays', 3, false) !!} Belgique<br />
+                                {!! Form::radio('pays', 4, false) !!} Croatie<br />
+                                {!! Form::radio('pays', 5, false) !!} Espagne<br />
+                                {!! Form::radio('pays', 6, false) !!} Finlande<br />
+                                {!! Form::radio('pays', 7, false) !!} Grèce<br />
+                                {!! Form::radio('pays', 8, false) !!} Irlande<br />
+                                {!! Form::radio('pays', 9, false) !!} Italie<br />
+                                {!! Form::radio('pays', 10, false) !!} Portugal
                             </label>
                         </div>
                     </div>
+                    <label>Email</label>
                     <div class="form-group {!! $errors->has('email') ? 'has-error' : '' !!}">
                         {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email']) !!}
                         {!! $errors->first('email', '<small class="help-block">:message</small>') !!}
                     </div>
+                    <label>Mot de passe</label>
                     <div class="form-group {!! $errors->has('password') ? 'has-error' : '' !!}">
                         {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Mot de passe']) !!}
                         {!! $errors->first('password', '<small class="help-block">:message</small>') !!}
                     </div>
-                    <div class="form-group">
-                        {!! Form::password('password_confirmation', ['class' => 'form-control', 'placeholder' => 'Confirmation mot de passe']) !!}
-                    </div>
                     <label>Role</label>
                     <div class="form-group">
-                        <div class="checkbox">
+                        <div class="radio">
                             <label>
-                                {!! Form::checkbox('subscriber', 1, null) !!} Subscriber<br />
-                                {!! Form::checkbox('subunlimited', 2, null) !!} Subunlimited
+                                {!! Form::radio('role', 1, true) !!} Subscriber<br />
+                                {!! Form::radio('role', 2, false) !!} Subunlimited
                             </label>
                         </div>
                     </div>
